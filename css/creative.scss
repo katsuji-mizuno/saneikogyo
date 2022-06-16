@@ -24,6 +24,7 @@ body.artworks {
 
 body.artworks .sectionTitle {
   color: #fff;
+  text-align: center;
 }
 
 /*=================
@@ -47,5 +48,32 @@ body.artworks .sectionTitle {
 
 #archiveWorks .contents, #taxoWorks .contents {
   background: #212A36;
+
+}
+
+.features_text_wrap{
+  width: 100%;
+  position: relative;
+  &::after{
+    position: absolute;
+    content: "";
+    background-image: url(../images/photograph/feature_bg.png);
+    width: 272px;
+    height:272px;
+    background-size: cover;
+    right: 0;
+    top: -67px;
+  }
+}
+
+.features_text{
+  width: 100%;
+  text-align: center;
+
+  color: #fff;
+  h3{
+    font-size: 20px;
+    letter-spacing: 0.7em;
+  }
 
 }

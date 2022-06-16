@@ -47,14 +47,21 @@
       </div>
     </div>
 
-
     <!-- 特徴 -->
     <div class="section" id="features">
       <div class="inner">
         <div class="sectionTitle fadeFromBottom">
           <span class="eng futura">Feature</span><h2 class="ja">特長</h2>
         </div>
-
+        <div class="features_text_wrap">
+          <div class="features_text">
+            <h3>その建物の最も美しい瞬間を切り取る。</h3>
+            竣工写真は、建物が完成したその瞬間の一度きりだけ撮影する事ができる、とても大切な写真です。<br />
+            サンエイアートワークスでは、建築主様の大切な建物の最も美しい瞬間を、意匠に合わせて1カットずつ丁寧に撮影します。<br />
+            また、撮影した写真を納品先のお客様には可能な限り、制限なく利用して頂きたいと考え、<br />
+            著作権の取り扱いにも柔軟に対応いたします。詳しくはこちらをご覧ください。
+          </div>
+        </div>
       </div>
     </div>
 
