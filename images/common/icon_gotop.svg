@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="icon_gotop" transform="translate(0 30) rotate(-90)">
+    <path id="up" d="M0,0H8.607" transform="translate(10.426 15.09)" fill="none" stroke="#002664" stroke-width="1"/>
+    <path id="arrow" d="M0,0,3.329,2.651,0,5.618" transform="translate(15.786 12.416)" fill="none" stroke="#002664" stroke-width="1"/>
+    <g id="circle" fill="none" stroke="#002664" stroke-width="1">
+      <circle cx="15" cy="15" r="15" stroke="none"/>
+      <circle cx="15" cy="15" r="14.5" fill="none"/>
+    </g>
+  </g>
+</svg>

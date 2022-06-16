@@ -1,0 +1,50 @@
+@import "base";
+
+
+.bg_black{
+  background: #212A36;
+}
+
+body.artworks {
+  #breadcrumb {
+    .breadlist {
+      li {
+        a,span {
+          color:#fff;
+          &.hvr-underline-from-left {
+            &::before {
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.artworks .sectionTitle {
+  color: #fff;
+}
+
+/*=================
+  secton
+=================*/
+
+
+
+.works_images{
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li{
+    width: 33%;
+    &:first-child{
+      width: 100%;
+    }
+  }
+}
+
+#archiveWorks .contents, #taxoWorks .contents {
+  background: #212A36;
+}
