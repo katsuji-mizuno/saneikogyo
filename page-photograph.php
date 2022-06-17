@@ -162,10 +162,9 @@
             <div class="btnWrap">
               <a href="<?php echo home_url(); ?>/photo_works/" class="btn_view_more svg-circle-change">
                 <span class="link_text">VIEW MORE</span>
-                <?php drawIcon('black',500); //parts_link_icon ?>
+                <?php drawIcon('white',500); //parts_link_icon ?>
               </a>
             </div>
-
 
             <?php endif; ?>
             <?php wp_reset_query(); ?>
@@ -196,7 +195,7 @@
               <dif class="fadeFromBottom">
                 <a href="<?php echo home_url(); ?>/creative/photograph/photobook/" class="btn_read_more svg-circle-change">
                   <span class="link_text">READ MORE</span>
-                  <?php drawIcon('black',500); //parts_link_icon ?>
+                  <?php drawIcon('white',500); //parts_link_icon ?>
                 </a>
               </dif>
             </div>
@@ -218,10 +217,10 @@
           <div class="bg_pc">
             <div class="texts section">
               <div class="sectionTitle white align_center fadeFromBottom">
-                <span class="eng futura">Photo Retouch</span><h2 class="ja">フォトレタッチ</h2>
+                <span class="eng futura">Photo Retouch</span><h2 class="ja">画像修正</h2>
               </div>
               <p class="text lead fadeFromBottom">
-                当社ではお客様のニーズにお応えできるよう各種レタッチを行っております。専属のレタッチャーによるハイクオリティーなレタッチを行うことで、宣材写真としての付加価値をプラスすることができます。
+                当社ではお客様のニーズにお応えできるよう各種レタッチを行っております。<br />専属のレタッチャーによるハイクオリティーなレタッチを行うことで、宣材写真としての付加価値をプラスすることができます。
               </p>
               <div class="btnWrap">
                 <div class="fadeFromBottom">
@@ -238,29 +237,42 @@
     </div>
 
 
+    <!-- お渡しするデータの詳細 -->
 
     <div id="awlinks">
       <div class="innerPC">
-        <div class="cols">
-          <div class="col">
-            <div class="fadeFromLeft">
-              <a href="<?php echo home_url(); ?>/contact/" class="contact">
-                <div class="sectionTitle white align_center">
-                  <span class="eng futura">Contact</span><h2 class="ja">お問い合わせ</h2>
-                </div>
-                <?php drawIcon('white',500); //parts_link_icon ?>
-              </a>
+        <div class="sectionTitle fadeFromBottom">
+          <span class="eng futura">Detail of delivery Deta</span><h2 class="ja">お渡しするデータの詳細</h2>
+        </div>
+        <div class="data_column">
+          <div class="high">
+            <h3>JPGハイレゾリューション</h3>
+            <div class="data_column_text">
+              <p>長辺：約8,000ピクセル/600dpi(最大)<br />
+              パンフレット・雑誌・サイン(看板)などにご利用いただけます。</p>
+              <span>■RAWデータの提供はできかねます。<br />■PSD・TIFF形式をご希望の際はご相談ください。</span>
             </div>
           </div>
-          <div class="col">
-            <div class="fadeFromRight">
-              <a href="<?php echo home_url(); ?>/creative/delivery/" class="delivery">
-                <div class="sectionTitle align_center">
-                  <span class="eng futura">Delivery</span><h2 class="ja">納品について</h2>
-                </div>
-                <?php drawIcon('black',500); //parts_link_icon ?>
-              </a>
+          <div class="standard">
+            <h3>JPGスタンダード</h3>
+            <div class="data_column_text">
+              <p>
+                長辺：約2,000ピクセル/250dpi<br />
+                SNSやウェブサイト掲載用にご利用いただけます。<br />
+                1カットあたり約1.2MB～2.5MB程度となります。
+              </p>
             </div>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="fadeFromLeft">
+            <a href="<?php echo home_url(); ?>/contact/" class="contact">
+              <div class="sectionTitle white align_center">
+                <span class="eng futura">Contact</span><h2 class="ja">お問い合わせ</h2>
+              </div>
+              <?php drawIcon('black',500); //parts_link_icon ?>
+            </a>
           </div>
         </div>
       </div>

@@ -537,6 +537,19 @@ body.artworks .sectionTitle {
   text-align: center;
 }
 
+#photobook .sectionTitle {
+  text-align: left;
+}
+
+.fadeFromRight {
+  color: #fff;
+  font-size: 13px;
+}
+
+body.artworks .btn_read_more .link_text {
+  color: #fff;
+}
+
 .feature_tit {
   position: absolute;
   top: -40px;
@@ -590,13 +603,14 @@ body.artworks .sectionTitle {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  font-size: 12px;
 }
 .works_images li a .meta2::before, .works_images li a .meta2::after {
   content: "";
   position: absolute;
   background-color: #7F8FA5;
   height: 1px;
-  bottom: 5px;
+  bottom: 3px;
   left: 0;
 }
 .works_images li a .meta2::before {
@@ -710,5 +724,114 @@ body.artworks .sectionTitle {
 #pagePhotograph #works .w_title {
   color: #fff;
   font-size: 17px;
+}
+
+/*=================
+  フォトレタッチ
+=================*/
+#retouch p.text {
+  font-size: 13px;
+}
+#retouch .sectionTitle .ja {
+  color: #fff;
+  font-size: 16px;
+}
+
+#pagePhotograph #retouch .lead {
+  max-width: 100%;
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+/*=================
+  Detail of delivery Deta
+=================*/
+#pagePhotograph #awlinks {
+  background: #212A36;
+}
+
+.data_column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 40px 0;
+  color: #fff;
+}
+.data_column > div {
+  width: 49%;
+  text-align: center;
+}
+.data_column h3 {
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 1px #3E5C89 dashed;
+  padding: 35px 0;
+}
+.data_column .data_column_text {
+  padding: 35px;
+  text-align: left;
+}
+.data_column .data_column_text p {
+  font-size: 13px;
+  line-height: 2.5;
+  margin: 0 0 15px;
+}
+.data_column .data_column_text span {
+  font-size: 12px;
+  color: #7E97A9;
+}
+.data_column .high {
+  background: #295371;
+}
+.data_column .high .data_column_text {
+  position: relative;
+}
+.data_column .high .data_column_text::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/photograph/icon_high.png);
+  background-size: cover;
+  width: 156px;
+  height: 162px;
+  bottom: 30px;
+  right: 20px;
+}
+.data_column .standard {
+  background: #22395C;
+}
+.data_column .standard .data_column_text {
+  position: relative;
+}
+.data_column .standard .data_column_text::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/photograph/icon_standard.png);
+  background-size: cover;
+  width: 122px;
+  height: 134px;
+  bottom: 10px;
+  right: 50px;
+}
+
+.contact .sectionTitle span, .contact .sectionTitle .ja {
+  color: #1A212B;
+}
+.contact a {
+  background: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=creative.css.map */

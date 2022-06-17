@@ -2199,7 +2199,7 @@ body.artworks .btn_read_more.white .link_text {
 .link_icon svg:nth-child(1) {
   z-index: 1;
 }
-.link_icon svg.over {
+.link_icon .over {
   opacity: 0;
 }
 .link_icon svg.over .svg-elem-1 {
