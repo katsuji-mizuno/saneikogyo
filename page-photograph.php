@@ -49,20 +49,22 @@
 
     <!-- 特徴 -->
     <div class="section" id="features">
-      <div class="inner">
-        <div class="sectionTitle fadeFromBottom">
-          <span class="eng futura">Feature</span><h2 class="ja">特長</h2>
-        </div>
-        <div class="features_text_wrap">
-          <div class="features_text">
-            <h3>その建物の最も美しい瞬間を切り取る。</h3>
-            竣工写真は、建物が完成したその瞬間の一度きりだけ撮影する事ができる、とても大切な写真です。<br />
-            サンエイアートワークスでは、建築主様の大切な建物の最も美しい瞬間を、意匠に合わせて1カットずつ丁寧に撮影します。<br />
-            また、撮影した写真を納品先のお客様には可能な限り、制限なく利用して頂きたいと考え、<br />
-            著作権の取り扱いにも柔軟に対応いたします。詳しくはこちらをご覧ください。
+        <div class="features_border">
+          <div class="feature_tit">
+            <div class="sectionTitle fadeFromBottom ">
+              <span class="eng futura">Feature</span><h2 class="ja">特長</h2>
+            </div>
+          </div>
+          <div class="features_text_wrap">
+            <div class="features_text">
+              <h3>その建物の最も美しい瞬間を切り取る。</h3>
+              竣工写真は、建物が完成したその瞬間の一度きりだけ撮影する事ができる、とても大切な写真です。<br />
+              サンエイアートワークスでは、建築主様の大切な建物の最も美しい瞬間を、意匠に合わせて1カットずつ丁寧に撮影します。<br />
+              また、撮影した写真を納品先のお客様には可能な限り、制限なく利用して頂きたいと考え、<br />
+              著作権の取り扱いにも柔軟に対応いたします。詳しくは<a href="">こちら</a>をご覧ください。
+            </div>
           </div>
         </div>
-      </div>
     </div>
 
 
@@ -71,6 +73,9 @@
       <div class="rel">
         <div class="inner">
 
+            <div class="sectionTitle fadeFromBottom ">
+              <span class="eng futura">Project</span><h2 class="ja">撮影実績</h2>
+            </div>
 
           <div class="works_images">
 
@@ -135,16 +140,16 @@
                   </div>
                   <div class="texts">
                     <h3 class="w_title"><?php the_title(); ?></h3>
-                    <div class="meta">
+                    <div class="meta2">
                       <?php
                         $terms = get_the_terms($post->ID,'works_category');
                         $count = count($terms);//タクソノミーの個数カウント
                         if ($count >= 1) {
                           foreach( $terms as $term ) {
-                            echo '<span>'. $term->name . '</span>';
+                            echo  $term->name ;
                           }
                         }else{
-                          echo '<span>なし</span>';
+                          echo 'なし';
                         }
                       ?>
                     </div>

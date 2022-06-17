@@ -27,33 +27,105 @@ body.artworks .sectionTitle {
   text-align: center;
 }
 
+.feature_tit{
+  position: absolute;
+  top: -40px;
+  background: #212A36;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 20px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
 /*=================
   secton
 =================*/
 
-
+.sectionTitle {
+  .ja {
+    color:#7F8FA5;
+  }
+  .eng{
+    font-size: 60px;
+  }
+}
 
 .works_images{
   ul{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   li{
-    width: 33%;
+    width: 32%;
     &:first-child{
       width: 100%;
+      margin: 0 0 80px;
+      .texts{
+        text-align: center;
+        .meta2 {
+         margin: 0 auto;
+        }
+      }
     }
+
+    a{
+      .meta2 {
+        position: relative;
+        color: #7F8FA5;
+        width: fit-content;
+        &::before,&::after{
+          content: "";
+          position: absolute;
+          background-color: #7F8FA5;
+          height: 1px;
+          bottom: 5px;
+          left: 0;
+        }
+        &::before{
+          width: 100%;
+        }
+        &::after{
+          width: 0%;
+          @include trans;
+        }
+      }
+      &:hover{
+        .meta2 {
+          &::before{
+            width: 0%;
+          }
+          &::after{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.btn_view_more {
+  justify-content: right;
+
+  .link_text{
+    color: #fff;
   }
 }
 
 #archiveWorks .contents, #taxoWorks .contents {
   background: #212A36;
-
 }
 
 .features_text_wrap{
   width: 100%;
   position: relative;
+  z-index: 2;
   &::after{
     position: absolute;
     content: "";
@@ -62,18 +134,91 @@ body.artworks .sectionTitle {
     height:272px;
     background-size: cover;
     right: 0;
-    top: -67px;
+    top: -40px;
   }
 }
 
 .features_text{
   width: 100%;
   text-align: center;
-
+  color: #fff;
+  font-size: 13px;
+  line-height: 2.5;
   color: #fff;
   h3{
     font-size: 20px;
     letter-spacing: 0.7em;
+    margin: 40px 0 40px;
   }
+  a{
+    color: #80FFFF;
+    position: relative;
+    &::before,&::after{
+      content: "";
+      position: absolute;
+      background-color: #80FFFF;
+      height: 1px;
+      bottom: 0px;
+      left: 0;
+    }
+    &::before{
+      width: 100%;
+    }
+    &::after{
+      width: 0%;
+      @include trans;
+    }
+    &:hover{
+      &::before{
+        width: 0%;
+      }
+      &::after{
+        width: 100%;
+      }
+    }
+  }
+}
 
+
+
+.features_border{
+  max-width: 1050px;
+  margin: 0 auto;
+  position: relative;
+  padding: 70px;
+  &::before,&::after{
+    content: "";
+    position: absolute;
+    border:1px solid #697893;
+  }
+  &::before{
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+  }
+  &::after{
+    top: 10px;
+    left: -10px;
+    right: 10px;
+    bottom: -10px;
+  }
+}
+
+
+
+
+
+
+
+
+#pagePhotograph {
+  //撮影事例
+  #works {
+
+    .w_title {
+      color: #fff;
+      font-size: 17px;
+    }
+  }
 }
