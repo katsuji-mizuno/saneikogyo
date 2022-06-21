@@ -55,7 +55,7 @@
               <span class="eng futura">Feature</span><h2 class="ja">特長</h2>
             </div>
           </div>
-          <div class="features_text_wrap">
+          <div class="features_text_wrap fadeFromBottom">
             <div class="features_text">
               <h3>その建物の最も美しい瞬間を切り取る。</h3>
               竣工写真は、建物が完成したその瞬間の一度きりだけ撮影する事ができる、とても大切な写真です。<br />
@@ -161,7 +161,7 @@
 
             <div class="btnWrap">
               <a href="<?php echo home_url(); ?>/photo_works/" class="btn_view_more svg-circle-change">
-                <span class="link_text">VIEW MORE</span>
+                <span class="link_text color_white">VIEW MORE</span>
                 <?php drawIcon('white',500); //parts_link_icon ?>
               </a>
             </div>
@@ -187,14 +187,14 @@
               <span class="eng futura">Photo book</span><h2 class="ja">フォトブック</h2>
             </div>
             <p class="text">
-              <div class="fadeFromRight">
+              <div class="fadeFromRight color_white">
                 当社フォトブックは印刷解像度2,400×1,200dpiを誇るCanon製最高級プリンターによる印刷で製作。立体感と透明感をリアルに表現し、外壁材やクロスなどの建材のデティールや、色の再現性など、高画質・高精細の美しさが魅力です。また、サイズ展開も豊富なためバリエーションに富んだフォトブックを製作する事ができます。
               </div>
             </p>
             <div class="btnWrap">
               <dif class="fadeFromBottom">
                 <a href="<?php echo home_url(); ?>/creative/photograph/photobook/" class="btn_read_more svg-circle-change">
-                  <span class="link_text">READ MORE</span>
+                  <span class="link_text color_white">READ MORE</span>
                   <?php drawIcon('white',500); //parts_link_icon ?>
                 </a>
               </dif>
@@ -244,7 +244,7 @@
         <div class="sectionTitle fadeFromBottom">
           <span class="eng futura">Detail of delivery Deta</span><h2 class="ja">お渡しするデータの詳細</h2>
         </div>
-        <div class="data_column">
+        <div class="data_column fadeFromLeft">
           <div class="high">
             <h3>JPGハイレゾリューション</h3>
             <div class="data_column_text">

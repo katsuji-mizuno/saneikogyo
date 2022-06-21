@@ -1,141 +1,243 @@
 @import "base";
+@import "common";
 
+/*==================== common.scssを打ち消し ================*/
 
-.bg_black{
-  background: #212A36;
+/*=================
+  TOPサブメニュー
+=================*/
+body:not(#pageHome) {
+  #mv {
+    margin:0 0 30px;
+  }
 }
 
-body.artworks {
+/*=================
+  パンくず
+=================*/
+.artworks {
   #breadcrumb {
-    .breadlist {
+    padding: 0;
+    ul.breadlist {
+      padding: 0;
       li {
+        position: relative;
         a,span {
+          position: relative;
           color:#fff;
           &.hvr-underline-from-left {
             &::before {
               background: #fff;
             }
+            &::after {
+              background: #fff;
+            }
+          }
+        }
+        &:not(:first-child) {
+          &::before {
+            border-top: 1px solid #A7A7A7;
           }
         }
       }
     }
   }
-}
-
-body.artworks .sectionTitle {
-  color: #fff;
-  text-align: center;
-
-}
-
-#photobook .sectionTitle {
-  text-align: left;
-}
-
-.fadeFromRight{
-  color: #fff;
-  font-size: 13px;
-}
-
-body.artworks .btn_read_more .link_text {
-  color: #fff;
-}
-
-.feature_tit{
-  position: absolute;
-  top: -40px;
-  background: #212A36;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0 20px;
-  left: 0;
-  right: 0;
-  z-index: 1;
 }
 
 /*=================
-  secton
+  photograph / フォトレタッチ
+=================*/
+#pagePhotograph {
+  #retouch {
+    background: #fff;
+    &::after {
+      background: linear-gradient(0deg, rgba(18, 36, 70, 0.75) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(47, 47, 47, 0.75) 100%);
+    }
+    p.text{
+      font-size: 13px;
+    }
+    .sectionTitle .ja {
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+}
+
+
+/*=================
+ photograph / Works テキスト
 =================*/
 
-.sectionTitle {
-  .ja {
-    color:#7F8FA5;
-  }
-  .eng{
-    font-size: 60px;
+#archiveWorks,#taxoWorks{
+  #works {
+    .texts {
+      &::before {
+        content:none;
+      }
+    }
+    .meta {
+      span {
+        background-color: unset;
+        color: #B9C6D8;
+      }
+    }
   }
 }
 
-.works_images{
-  ul{
+#archiveWorks,
+#taxoWorks {
+  .contents {
+    min-height: 100vh;
+  }
+}
+
+
+
+
+#archiveWorks,
+#taxoWorks{
+  .tarms {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  li{
-    width: 32%;
-    &:first-child{
-      width: 100%;
-      margin: 0 0 80px;
-      .texts{
-        text-align: center;
-        .meta2 {
-         margin: 0 auto;
+    justify-content: left;
+    flex-wrap:wrap;
+    width: 360px;
+    z-index: 1;
+    li {
+      margin:3px 5px;
+      width: 31%;
+      a {
+        display: block;
+        padding:0px;
+        line-height: 1.5;
+        color: #808080;
+        background-color:unset;
+        width: fit-content;
+      }
+      &.current {
+        a {
+          border-color: #000;
+          color:#fff;
+          background-color: unset;
+          width: fit-content;
+
         }
+      }
+      &:nth-child(3n){
+        margin:3px 0px 3px 5px ;
       }
     }
-
-    a{
-      .meta2 {
-        position: relative;
-        color: #7F8FA5;
-        width: fit-content;
-        font-size: 12px;
-        &::before,&::after{
-          content: "";
-          position: absolute;
-          background-color: #7F8FA5;
-          height: 1px;
-          bottom: 3px;
-          left: 0;
-        }
-        &::before{
-          width: 100%;
-        }
-        &::after{
-          width: 0%;
-          @include trans;
-        }
+    @include mediaTB {
+      li {
+        margin:5px;
       }
-      &:hover{
-        .meta2 {
-          &::before{
-            width: 0%;
-          }
-          &::after{
-            width: 100%;
-          }
-        }
+    }
+  }
+  #works {
+    position: relative;
+    padding-bottom: 0;
+    z-index: 1;
+    .texts {
+      margin-top: 10px;
+      &::before {
+        content:none;
+      }
+    }
+    .meta {
+      position: unset;
+      line-height: 0;
+      z-index: 2;
+      span {
+        background-color: unset;
+        color: #B9C6D8;
+        padding: 0 ;
       }
     }
   }
 }
-
-
 
 .btn_view_more {
   justify-content: right;
+}
 
-  .link_text{
+
+/*=================
+ セクションタイトル
+=================*/
+
+.sectionTitle {
+  margin-bottom: 40px;
+  .ja {
+    color: #7F8FA5;
+    font-size: 11px;
+  }
+  .eng{
     color: #fff;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.flex {
+    display: flex;
+    align-items: center;
+    margin: 100px 0 100px;
+    .eng {
+      margin: 0 50px 0 0;
+    }
+  }
+  @include mediaTB {
+    .eng {
+      font-size: 60px;
+    }
+    .ja {
+      font-size: 16px;
+    }
+  }
+   @include mediaPC {
+    .eng {
+      font-size: 70px;
+    }
+    .ja {
+      font-size: 16px;
+    }
+  }
+}
+#archiveWorks,
+#taxoWorks {
+  .sectionTitle {
+    &.flex {
+      margin: 100px 0 40px;
+    }
   }
 }
 
-#archiveWorks .contents, #taxoWorks .contents {
+
+/*=================
+ アンダーライン
+=================*/
+.hvr-underline-from-left{
+  &::before{
+    background-color: #fff;
+  }
+}
+
+/*=================
+ Works 背景
+=================*/
+
+#archiveWorks .contents{
   background: #212A36;
 }
+
+
+/*====================== 新規スタイル ========================*/
+
+.bg_black{
+  background: #212A36;
+}
+
+/*==================================
+  photograph / Feature
+==================================*/
 
 .features_text_wrap{
   width: 100%;
@@ -194,8 +296,6 @@ body.artworks .btn_read_more .link_text {
   }
 }
 
-
-
 .features_border{
   max-width: 1050px;
   margin: 0 auto;
@@ -220,47 +320,91 @@ body.artworks .btn_read_more .link_text {
   }
 }
 
+.feature_tit{
+  position: absolute;
+  top: -40px;
+  background: #212A36;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 20px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
 
+/*==================================
+    photograph / Project
+==================================*/
 
+#pagePhotograph #works .w_title, #pageDorone #works .w_title {
+  color: #fff;
+  font-size: 17px;
+}
+#archiveWorks #works .w_title, #taxoWorks #works .w_title {
+  color: #fff;
+  font-size: 17px;
+}
 
+.works_images{
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  li{
+    width: 32%;
+    &:first-child{
+      width: 100%;
+      margin: 0 0 80px;
+      .texts{
+        text-align: center;
+        .meta2 {
+         margin: 0 auto;
+        }
+      }
+    }
 
-
-
-
-#pagePhotograph {
-  //撮影事例
-  #works {
-
-    .w_title {
-      color: #fff;
-      font-size: 17px;
+    a{
+      .meta2 {
+        position: relative;
+        color: #7F8FA5;
+        width: fit-content;
+        font-size: 12px;
+        &::before,&::after{
+          content: "";
+          position: absolute;
+          background-color: #7F8FA5;
+          height: 1px;
+          bottom: 3px;
+          left: 0;
+        }
+        &::before{
+          width: 100%;
+        }
+        &::after{
+          width: 0%;
+          @include trans;
+        }
+      }
+      &:hover{
+        .meta2 {
+          &::before{
+            width: 0%;
+          }
+          &::after{
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
 
-/*=================
-  フォトレタッチ
-=================*/
-#retouch{
-  p.text{
-    font-size: 13px;
-  }
-  .sectionTitle .ja {
-    color: #fff;
-    font-size: 16px;
-  }
-}
-
-#pagePhotograph #retouch .lead {
-  max-width: 100%;
-  margin: 60px auto 0;
-  text-align: center;
-}
-
-
-/*=================
-  Detail of delivery Deta
-=================*/
+/*==================================
+    photograph / Detail of delivery Deta
+==================================*/
 #pagePhotograph #awlinks {
   background: #212A36;
 }
@@ -328,7 +472,11 @@ body.artworks .btn_read_more .link_text {
   }
 }
 
+/*==================================
+    photograph / Contact
+==================================*/
 .contact{
+  margin: 100px 0 20px;
 
   .sectionTitle {
     span,.ja {
@@ -343,5 +491,191 @@ body.artworks .btn_read_more .link_text {
     justify-content: center;
     padding: 20px;
     align-items: center;
+    height: 150px;
+  }
+}
+
+/*==================================
+    photograph / 下層ページ
+==================================*/
+#archiveWorks,
+#taxoWorks {
+  .contents {
+    min-height: 100vh;
+  }
+  .inner{
+    &.backlogo{
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        background-image: url(../images/photograph/bg_project.png);
+        background-size: cover;
+        width: 460px;
+        height: 460px;
+        top: -100px;
+        right: 0;
+      }
+    }
+  }
+}
+
+.inner{
+  &.backlogos{
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      background-image: url(../images/photograph/bg_project.png);
+      background-size: cover;
+      width: 280px;
+      height: 280px;
+      top: -100px;
+      right: 0;
+    }
+  }
+}
+
+/*==================================
+    Project
+==================================*/
+.bread_tarm{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/*==================================
+    Project / ページナビ(一覧)
+==================================*/
+.wp-pagenavi {
+  span,a{
+    background-color: #E6E6E6;
+  }
+  a{
+    &.nextpostslink,&.previouspostslink{
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        background-image: url(../images/photograph/icon_page.png);
+        width: 4px;
+        height: 6px;
+        background-size: cover;
+        top: 17px;
+        left: 18px;
+      }
+    }
+
+    &.nextpostslink{
+      &::after{
+        top: 17px;
+        left: 18px;
+      }
+
+    }
+    &.previouspostslink{
+      &::after{
+        transform: rotate(180deg);
+        top: 17px;
+        left: 18px;
+      }
+    }
+  }
+}
+
+
+
+
+/*==================================
+  Photo Book
+==================================*/
+
+.point_text_wrap{
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.point_text{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  line-height: 2.5;
+}
+
+.point_border{
+  max-width: 1050px;
+  margin: 0 auto;
+  position: relative;
+  padding: 70px;
+  &::before,&::after{
+    content: "";
+    position: absolute;
+    border:1px solid #697893;
+  }
+  &::before{
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+  }
+  &::after{
+    top: 10px;
+    left: -10px;
+    right: 10px;
+    bottom: -10px;
+  }
+}
+
+.point_tit{
+  position: absolute;
+  top: -10px;
+  background: #212A36;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 20px;
+  left: 40px;
+  z-index: 1;
+
+  .sectionTitle {
+    margin-bottom: 40px;
+    .ja {
+      color: #7F8FA5;
+      font-size: 11px;
+    }
+    .eng{
+      color: #fff;
+    }
+    &.center {
+      text-align: center;
+    }
+    &.flex {
+      display: flex;
+      align-items: center;
+      margin: 100px 0 100px;
+      .eng {
+        margin: 0 50px 0 0;
+      }
+    }
+    @include mediaTB {
+      .eng {
+        font-size: 30px;
+      }
+      .ja {
+        font-size: 16px;
+      }
+    }
+    @include mediaPC {
+      .eng {
+        font-size: 30px;
+      }
+      .ja {
+        font-size: 16px;
+      }
+    }
   }
 }

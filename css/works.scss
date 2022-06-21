@@ -1,0 +1,137 @@
+@import "base";
+
+
+
+/*=================
+  ページタイトル
+=================*/
+.mainTitle {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%,-50%);
+  width: 80%;
+  span {
+    display: block;
+  }
+  .eng {
+    height: 70px;
+    width: auto;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .ja {
+    font-size: 17px;
+    margin-top: 10px;
+  }
+  .lead {
+    font-size: 11px;
+    margin-top: 30px;
+    text-align: left;
+  }
+  @include mediaTB {
+    .eng {
+      height: 106px;
+    }
+    .ja {
+      font-size: 15px;
+    }
+    .lead {
+      font-size: 13px;
+      max-width: 420px;
+      margin:50px auto 0;
+    }
+  }
+}
+
+/*=================
+ セクションタイトル
+=================*/
+.sectionTitle {
+  color: $navy;
+  margin-bottom: 40px;
+  &.white {
+    color: #fff;
+  }
+  .eng {
+    color: #fff;
+
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .ja {
+    color: #7F8FA5;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.flex {
+    display: flex;
+  }
+
+  @include mediaTB {
+    .eng {
+      font-size: 60px;
+    }
+    .ja {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+  }
+   @include mediaPC {
+    .eng {
+      font-size: 70px;
+    }
+    .ja {
+      font-size: 16px;
+    }
+  }
+}
+body.artworks {
+  .sectionTitle {
+    color:#000;
+  }
+  .sectionTitle.white {
+    color:#fff;
+  }
+}
+
+/*=================
+ バータイトル
+=================*/
+.barTitle {
+  text-align: center;
+  font-weight:500;
+  line-height: 1.5;
+  font-size: 17px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  &::after {
+    content:"";
+    display: block;
+    position: absolute;
+    width: 62px;
+    height: 1px;
+    background-color: $navy;
+    bottom: 0;
+    left: calc(50% - 31px);
+  }
+  @include mediaTB {
+    font-size: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 45px;
+  }
+}
+
+
+
