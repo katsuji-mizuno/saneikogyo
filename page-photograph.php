@@ -19,7 +19,7 @@
 <body id="pagePhotograph"  class="artworks">
 
   <?php get_template_part('parts_site_header_artworks'); ?>
-  <main class="contents bg_black">
+  <main class="contents bg_deepblue">
 
     <!-- タイトル -->
     <div id="mv">
@@ -49,31 +49,32 @@
 
     <!-- 特徴 -->
     <div class="section" id="features">
+      <div class="inner">
         <div class="features_border">
           <div class="feature_tit">
-            <div class="sectionTitle fadeFromBottom ">
+            <div class="sectionTitle fadeFromBottom center">
               <span class="eng futura">Feature</span><h2 class="ja">特長</h2>
             </div>
           </div>
           <div class="features_text_wrap fadeFromBottom">
             <div class="features_text">
-              <h3>その建物の最も美しい瞬間を切り取る。</h3>
+              <h3>その建物の最も美しい<br class="sp">瞬間を切り取る。</h3>
               竣工写真は、建物が完成したその瞬間の一度きりだけ撮影する事ができる、とても大切な写真です。<br />
               サンエイアートワークスでは、建築主様の大切な建物の最も美しい瞬間を、意匠に合わせて1カットずつ丁寧に撮影します。<br />
               また、撮影した写真を納品先のお客様には可能な限り、制限なく利用して頂きたいと考え、<br />
-              著作権の取り扱いにも柔軟に対応いたします。詳しくは<a href="">こちら</a>をご覧ください。
+              著作権の取り扱いにも柔軟に対応いたします。詳しくは<a href="<?php bloginfo('template_directory'); ?>/pdf/noncredit.pdf" target="_blank" rel="noopener noreferrer">こちら</a>をご覧ください。
             </div>
           </div>
         </div>
+      </div>
     </div>
-
 
     <!-- 撮影事例 -->
     <div class="section" id="works">
       <div class="rel">
         <div class="inner">
 
-            <div class="sectionTitle fadeFromBottom ">
+            <div class="sectionTitle fadeFromBottom center">
               <span class="eng futura">Project</span><h2 class="ja">撮影実績</h2>
             </div>
 
@@ -170,7 +171,6 @@
             <?php wp_reset_query(); ?>
           </div><!-- w_slideWrap -->
 
-
         </div>
       </div>
     </div>
@@ -179,7 +179,6 @@
     <!-- フォトブック -->
     <div class="section" id="photobook">
       <div class="inner">
-
 
         <div class="cols">
           <div class="texts">
@@ -191,7 +190,7 @@
                 当社フォトブックは印刷解像度2,400×1,200dpiを誇るCanon製最高級プリンターによる印刷で製作。立体感と透明感をリアルに表現し、外壁材やクロスなどの建材のデティールや、色の再現性など、高画質・高精細の美しさが魅力です。また、サイズ展開も豊富なためバリエーションに富んだフォトブックを製作する事ができます。
               </div>
             </p>
-            <div class="btnWrap">
+            <div class="btnWrap pc_view">
               <dif class="fadeFromBottom">
                 <a href="<?php echo home_url(); ?>/creative/photograph/photobook/" class="btn_read_more svg-circle-change">
                   <span class="link_text color_white">READ MORE</span>
@@ -205,6 +204,14 @@
               <img src="<?php bloginfo('template_directory'); ?>/images/photograph/photobook_sp.jpg" class="js_img_change" alt="photobook">
             </div>
           </div>
+          <div class="btnWrap sp_view">
+              <dif class="fadeFromBottom">
+                <a href="<?php echo home_url(); ?>/creative/photograph/photobook/" class="btn_read_more svg-circle-change">
+                  <span class="link_text color_white">READ MORE</span>
+                  <?php drawIcon('white',500); //parts_link_icon ?>
+                </a>
+              </dif>
+            </div>
         </div>
       </div>
     </div>
@@ -240,42 +247,49 @@
     <!-- お渡しするデータの詳細 -->
 
     <div id="awlinks">
-      <div class="innerPC">
-        <div class="sectionTitle fadeFromBottom">
-          <span class="eng futura">Detail of delivery Deta</span><h2 class="ja">お渡しするデータの詳細</h2>
-        </div>
-        <div class="data_column fadeFromLeft">
-          <div class="high">
-            <h3>JPGハイレゾリューション</h3>
-            <div class="data_column_text">
-              <p>長辺：約8,000ピクセル/600dpi(最大)<br />
-              パンフレット・雑誌・サイン(看板)などにご利用いただけます。</p>
-              <span>■RAWデータの提供はできかねます。<br />■PSD・TIFF形式をご希望の際はご相談ください。</span>
-            </div>
+      <div class="inner">
+        <div class="innerPC">
+          <div class="sectionTitle fadeFromBottom">
+            <span class="eng futura">Detail of <br class="sp">delivery Deta</span><h2 class="ja">お渡しするデータの詳細</h2>
           </div>
-          <div class="standard">
-            <h3>JPGスタンダード</h3>
-            <div class="data_column_text">
-              <p>
-                長辺：約2,000ピクセル/250dpi<br />
-                SNSやウェブサイト掲載用にご利用いただけます。<br />
-                1カットあたり約1.2MB～2.5MB程度となります。
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact">
-          <div class="fadeFromLeft">
-            <a href="<?php echo home_url(); ?>/contact/" class="contact">
-              <div class="sectionTitle white align_center">
-                <span class="eng futura">Contact</span><h2 class="ja">お問い合わせ</h2>
+          <div class="data_column fadeFromLeft">
+            <div class="high">
+              <h3>JPGハイレゾリューション</h3>
+              <div class="data_column_text">
+                <p>長辺：約8,000ピクセル/600dpi(最大)<br />
+                パンフレット・雑誌・サイン(看板)などにご利用いただけます。</p>
+                <span>■RAWデータの提供はできかねます。<br />■PSD・TIFF形式をご希望の際はご相談ください。</span>
               </div>
-              <?php drawIcon('black',500); //parts_link_icon ?>
-            </a>
+            </div>
+            <div class="standard">
+              <h3>JPGスタンダード</h3>
+              <div class="data_column_text">
+                <p>
+                  長辺：約2,000ピクセル/250dpi<br />
+                  SNSやウェブサイト掲載用にご利用いただけます。<br />
+                  1カットあたり約1.2MB～2.5MB程度となります。
+                </p>
+              </div>
+            </div>
           </div>
+
+
+
         </div>
       </div>
+      <div class="contact">
+        <div class="fadeFromLeft">
+          <a href="<?php echo home_url(); ?>/contact/" class="contact">
+            <div class="sectionTitle white align_center">
+              <span class="eng futura">Contact</span><h2 class="ja">お問い合わせ</h2>
+            </div>
+            <?php drawIcon('black',500); //parts_link_icon ?>
+          </a>
+        </div>
+      </div>
+
+
+
     </div>
 
   </main>

@@ -38,7 +38,7 @@
               </div>
 
               <ul class="g_top_menu">
-                
+
                 <li class="lv1 bound">
                   <a href="<?php echo home_url() ?>/creative/photograph/" ><span class="eng futura" data-text="Photograph">Photograph</span><span class="ja" data-text="建築・竣工写真">建築・竣工写真</span></a>
                   <ul class="g_sub_menu">
@@ -46,7 +46,7 @@
                       <a href="<?php echo home_url() ?>/creative/photograph#features" ><span class="eng futura" data-text="Features">Features</span><span class="ja" data-text="4つの特長">4つの特長</span></a>
                     </li>
                     <li class="lv2">
-                      <a href="<?php echo home_url() ?>/photo_works/" ><span class="eng futura" data-text="Works">Works</span><span class="ja" data-text="撮影事例">撮影事例</span></a>
+                      <a href="<?php echo home_url() ?>/photo_works/" ><span class="eng futura" data-text="Works">Project</span><span class="ja" data-text="撮影事例">撮影事例</span></a>
                     </li>
                     <li class="lv2">
                       <a href="<?php echo home_url() ?>/creative/photograph/photobook/" ><span class="eng futura" data-text="Photo Book">Photo Book</span><span class="ja" data-text="フォトブック">フォトブック</span></a>
@@ -80,7 +80,7 @@
                     </li>
                   </ul>
                 </li>
-                
+
 
                 <li class="lv1">
                   <a href="<?php echo home_url() ?>">
@@ -90,7 +90,7 @@
                 </li>
 
               </ul>
-              
+
             </nav>
           </li>
         </ul>
@@ -99,6 +99,6 @@
         <span></span><span></span><span></span>
       </a>
     </header>
-    
+
 
   <!--parts_site_header.php end-->

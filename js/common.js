@@ -152,11 +152,11 @@ jQuery(function($){
   var ofsh = window.pageYOffset ;
 
   //$('#loadingWrap').css('display','none');
-  
+
   $('#loader-bg').css({'display':'block','position':'fixed','top': '0' + 'px'});
   $('.loader').css({'visibility':'visible'});
   $('#loadingWrap').css({'visibility':'hidden','opacity':'0'});
-  
+
 
 /*
   $('#js-mv-image')
@@ -171,7 +171,7 @@ jQuery(function($){
 });
 
 $(window).on("load",function(){
-  
+
   if ($('#pageHome')[0]) {
     //ホームページの場合
     setTimeout(function() {
@@ -181,7 +181,7 @@ $(window).on("load",function(){
         // { duration: '500', easing: "easeInOutQuint", }
       );
     }, 300);
-    
+
     setTimeout(function() {
       $('body').addClass('loading');
     }, 800);
@@ -204,7 +204,7 @@ $(window).on("load",function(){
       $('body').removeClass('loading');
     }, 200);
   }
-  
+
 });
 
 //10秒たったら強制的にロード画面を非表示
@@ -239,17 +239,17 @@ function smartRollover() {
     }
   }
 }
- 
+
 if(window.addEventListener) {
   window.addEventListener("load", smartRollover, false);
 }
 else if(window.attachEvent) {
   window.attachEvent("onload", smartRollover);
 }
- 
- 
+
+
 // cross fade
- 
+
 new function(){
   function setRollOver2(){
     if(!document.images){return;}
@@ -265,10 +265,10 @@ new function(){
         rolloverImg.style.opacity = alpha/100;
         rolloverImg.style.filter = 'alpha(opacity='+alpha+')';
         rolloverImg.style.position = 'absolute';
- 
+
         addEvent(rolloverImg,'mouseover',function(){setFader(this,100);});
         addEvent(rolloverImg,'mouseout',function(){setFader(this,0);});
- 
+
         insert[insert.length] = {position:imgs[i],element:rolloverImg};
       }
     }
@@ -277,8 +277,8 @@ new function(){
       parent.insertBefore(insert[i].element,insert[i].position);
     }
   }
- 
- 
+
+
   function setFader(targetObj,targetAlpha){
     targetObj.targetAlpha = targetAlpha;
     if(targetObj.currentAlpha==undefined){
@@ -295,7 +295,7 @@ new function(){
       targetObj.fader();
     }
   }
- 
+
   function fader(){
     this.currentAlpha += (this.targetAlpha - this.currentAlpha)*0.2;
     if(Math.abs(this.currentAlpha-this.targetAlpha)<1){
@@ -310,7 +310,7 @@ new function(){
       setTimeout(function(){fader.apply(scope)},10);
     }
   }
- 
+
   function addEvent(eventTarget, eventName, func){
     if(eventTarget.addEventListener){
       eventTarget.addEventListener(eventName, func, false);
@@ -319,9 +319,9 @@ new function(){
       eventTarget.attachEvent('on'+eventName, function(){func.apply(eventTarget);});
     }
   }
- 
+
   addEvent(window,'load',setRollOver2);
- 
+
 }
 
 
@@ -407,7 +407,7 @@ jQuery.event.add(window,"load",function(){
 --------------------------------------*/
 
 $(function(){
- 
+
   $(window).scroll(function(){
     //if (window.innerWidth < 751) {
       scrollHeight = $(document).height();
@@ -430,7 +430,7 @@ $(function(){
     //   }
     // }
   });
-  
+
 });
 
 /*--------------------------------------
@@ -495,6 +495,13 @@ jQuery(function($){
         var delayleft = 500;
       }
     }
+    if ($(this).hasClass('delay2')){
+      if (window.innerWidth > 750){
+        var delayleft = 1000;
+      }
+    }
+
+
     if (isInView2) {
       $(this).stop();
       $(this).delay(delayleft).animate({right:'0px',opacity:1}, 800);
@@ -512,6 +519,11 @@ jQuery(function($){
     if ($(this).hasClass('delay')){
       if (window.innerWidth > 750){
         var delayRight = 500;
+      }
+    }
+    if ($(this).hasClass('delay2')){
+      if (window.innerWidth > 750){
+        var delayRight = 1000;
       }
     }
     if (isInView3) {

@@ -22,9 +22,9 @@ body:not(#pageHome) {
       padding: 0;
       li {
         position: relative;
-        a,span {
+        a {
           position: relative;
-          color:#fff;
+          color:#A7A7A7;
           &.hvr-underline-from-left {
             &::before {
               background: #fff;
@@ -34,6 +34,10 @@ body:not(#pageHome) {
             }
           }
         }
+        span {
+          color:#fff;
+        }
+
         &:not(:first-child) {
           &::before {
             border-top: 1px solid #A7A7A7;
@@ -43,6 +47,174 @@ body:not(#pageHome) {
     }
   }
 }
+
+
+
+////// メニューボタン ///////
+
+body.artworks {
+  #btnMenu {
+    background: unset;
+    @include mediaTB {
+      top:35px;
+      right: 40px;
+    }
+    span {
+      height: 1px;
+      width: 30px;
+      left: 5px;
+      background: #fff;
+      &:nth-child(1){
+        top: 12px;
+      }
+      &:nth-child(3){
+        top: 30px;
+      }
+      @include mediaSP{
+        &:nth-child(1){
+          top: 15px;
+        }
+        &:nth-child(3){
+          top: 27px;
+        }
+      }
+    }
+    &:hover{
+      @include mediaTB{
+        span {
+          &:nth-child(1){
+            top: 15px;
+          }
+          &:nth-child(3){
+            top: 27px;
+          }
+        }
+      }
+    }
+  }
+  ////メニューが開かれた場合////
+  &.open{
+    #btnMenu {
+      span {
+        background: #fff;
+        &:nth-child(1){
+          top: 21px;
+        }
+        &:nth-child(3){
+          top: 21px;
+        }
+      }
+      &:hover{
+        span {
+          background: #fff;
+          @include mediaTB{
+            &:nth-child(1){
+              transform:rotate(35deg) ;
+            }
+            &:nth-child(3){
+              transform:rotate(-35deg) ;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.white_head:not(.open) {
+    #header {
+      background-color: #fff;
+    }
+    #btnMenu {
+      background-color: unset;
+      span {
+        background-color: #000;
+      }
+    }
+
+  }
+}
+
+
+/*=================
+  artworksトップ
+=================*/
+#pagePhotograph {
+  .mainTitle {
+    .eng {
+      height: 90px;
+    }
+    @include mediaTB {
+      .eng {
+        height: 180px;
+      }
+    }
+  }
+
+  //アートワークスリンク
+  #awlinks {
+    .sectionTitle {
+      margin-bottom: 0;
+      @include mediaSP{
+        width: 100%;
+        text-align: center;
+        margin: 60px 0 0;
+      }
+      width: calc(100% - 40px);
+    }
+    .contact{
+      .sectionTitle {
+        @include mediaSP{
+          margin: 00px 0 0;
+        }
+      }
+    }
+  }
+
+}
+
+/*=================
+  撮影事例
+=================*/
+#pagePhotograph,
+#pagePhotobook,
+#archiveWorks,
+#pagePhotoRetouch,
+#taxoWorks{
+  .contents {
+    &.bg_deepblue{
+      background: #212A36;
+    }
+  }
+  #photobook {
+    background-color: #212A36;
+  }
+
+  #works {
+    .lists {
+      a {
+        position: relative;
+        display: block;
+      }
+      .image {
+        overflow: hidden;
+      }
+    }
+    @include mediaSP {
+      .lists {
+        li {
+          +li {
+            margin-top: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
 
 /*=================
   photograph / フォトレタッチ
@@ -63,7 +235,6 @@ body:not(#pageHome) {
   }
 }
 
-
 /*=================
  photograph / Works テキスト
 =================*/
@@ -71,6 +242,9 @@ body:not(#pageHome) {
 #archiveWorks,#taxoWorks{
   #works {
     .texts {
+      @include mediaSP{
+        text-align: center;
+      }
       &::before {
         content:none;
       }
@@ -91,9 +265,6 @@ body:not(#pageHome) {
   }
 }
 
-
-
-
 #archiveWorks,
 #taxoWorks{
   .tarms {
@@ -102,9 +273,19 @@ body:not(#pageHome) {
     flex-wrap:wrap;
     width: 360px;
     z-index: 1;
+    @include mediaSP{
+      justify-content: center;
+      margin: 40px 0 10px 20px;
+    }
     li {
-      margin:3px 5px;
-      width: 31%;
+      width: 32%;
+      @include mediaTB{
+        margin:3px 5px;
+        width: 31%;
+        &:nth-child(3n){
+          margin:3px 0px 3px 5px ;
+        }
+      }
       a {
         display: block;
         padding:0px;
@@ -122,9 +303,7 @@ body:not(#pageHome) {
 
         }
       }
-      &:nth-child(3n){
-        margin:3px 0px 3px 5px ;
-      }
+
     }
     @include mediaTB {
       li {
@@ -157,15 +336,17 @@ body:not(#pageHome) {
 
 .btn_view_more {
   justify-content: right;
+  @include mediaSP{
+    justify-content: center;
+  }
 }
-
 
 /*=================
  セクションタイトル
 =================*/
 
 .sectionTitle {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   .ja {
     color: #7F8FA5;
     font-size: 11px;
@@ -177,12 +358,19 @@ body:not(#pageHome) {
     text-align: center;
   }
   &.flex {
-    display: flex;
-    align-items: center;
-    margin: 100px 0 100px;
-    .eng {
-      margin: 0 50px 0 0;
+    @include mediaSP{
+      text-align: center;
     }
+
+    @include mediaTB{
+      display: flex;
+      align-items: center;
+      margin: 100px 0 100px;
+      .eng {
+        margin: 0 50px 0 0;
+      }
+    }
+
   }
   @include mediaTB {
     .eng {
@@ -201,15 +389,32 @@ body:not(#pageHome) {
     }
   }
 }
+
+#pagePhotograph,
+#pagePhotobook,
 #archiveWorks,
-#taxoWorks {
+#pagePhotoRetouch,
+#taxoWorks{
   .sectionTitle {
     &.flex {
       margin: 100px 0 40px;
+      @include mediaSP{
+        margin: 90px 0 80px;
+          &::after{
+            content: "";
+            position: absolute;
+            background-image: url(../images/photograph/bg_project.png);
+            background-size: cover;
+            width: 156px;
+            height: 156px;
+            top: -50px;
+            left: 50%;
+            margin-left: -78px;
+          }
+      }
     }
   }
 }
-
 
 /*=================
  アンダーライン
@@ -220,19 +425,215 @@ body:not(#pageHome) {
   }
 }
 
-/*=================
- Works 背景
-=================*/
 
-#archiveWorks .contents{
-  background: #212A36;
+
+/*=================
+ PhotoBook サブタイトル
+=================*/
+body.artworks .subTitle {
+  font-size: 24px;
 }
 
+/*=================
+  フォトブック
+=================*/
+#pagePhotobook {
+  .contents {
+    position: relative;
+    &::after {
+      content:none;
+    }
+  }
+
+  #photobook,
+  #album,
+  #contact {
+    .detailWrap {
+      margin-top: 0;
+      dl {
+        color: #fff;
+        background-color: unset;
+        align-items: baseline;
+        border-top: 1px dashed #434C62;
+        &+dl {
+          border-top: 1px dashed #434C62;
+        }
+        &:last-child{
+          border-bottom: 1px dashed #434C62;
+        }
+        @include mediaSP{
+          padding: 15px 0;
+          display: block;
+        }
+        dt,dd {
+          padding:10px 10px;
+          @include mediaSP{
+            padding: 2px 0px;
+          }
+        }
+        dt {
+          width: 40%;
+          @include mediaSP{
+            width: 100%;
+          }
+        }
+        dd {
+          width: 60%;
+          @include mediaSP{
+            width: 100%;
+          }
+        }
+      }
+
+      dt{
+        color: #7F8FA5;
+        line-height: 1;
+        span{
+          font-size: 11px;
+          font-style: italic;
+          color: #485362;
+          margin: 0 0 0 5px;
+
+          @include mediaTB{
+            display: block;
+            margin: 7px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*=================
+  下層共通
+=================*/
+body.artworks {
+  .goto_up {
+    margin:40px 0 0;
+    font-size: 11px;
+    @include mediaTB {
+      margin:80px 0 0;
+    }
+    .hvr-underline-from-left {
+      color: #fff;
+      &::before {
+        background-color: #ababab;
+      }
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+/***************************************************
+ * Generated by SVG Artista on 2/9/2021, 2:37:33 PM
+ * MIT license (https://opensource.org/licenses/MIT)
+ * W. https://svgartista.net
+ **************************************************/
+ .btn_read_more,
+ .btn_contact,
+ .btn_view_more {
+   .link_text{
+     font-size: 12px;
+     margin-right: 20px;
+   }
+   @include mediaTB {
+     .link_text {
+       font-size: 13px;
+     }
+   }
+ }
+
+.f_logo_sanei{
+  display: none;
+}
 
 /*====================== 新規スタイル ========================*/
 
-.bg_black{
-  background: #212A36;
+
+br{
+  @include mediaTB{
+    &.sp{
+      display: none;
+    }
+  }
+  @include mediaSP{
+    &.pc{
+      display: none;
+    }
+  }
+}
+
+
+
+/*==================================
+  各セクションの調整
+==================================*/
+
+.section{
+  &#pagePhotograph{
+
+  }
+  &#features{
+    padding: 120px 0 0;
+    @include mediaSP{
+      padding: 80px 0 0;
+    }
+  }
+  &#photobook{
+    .sectionTitle{
+      text-align: center;
+    }
+    .btn_read_more, .btn_contact, .btn_view_more {
+      @include mediaSP{
+        justify-content: center;
+      }
+    }
+  }
+}
+
+
+
+
+/*==================================
+  photograph / 撮影実績のメタ
+==================================*/
+a{
+  .meta2 {
+    position: relative;
+    color: #7F8FA5;
+    width: fit-content;
+    font-size: 12px;
+    @include mediaSP{
+      margin: 0 auto;
+    }
+    &::before,&::after{
+      content: "";
+      position: absolute;
+      background-color: #7F8FA5;
+      height: 1px;
+      bottom: 3px;
+      left: 0;
+    }
+    &::before{
+      width: 100%;
+    }
+    &::after{
+      width: 0%;
+      @include trans;
+    }
+  }
+  &:hover{
+    .meta2 {
+      &::before{
+        width: 0%;
+      }
+      &::after{
+        width: 100%;
+      }
+    }
+  }
 }
 
 /*==================================
@@ -251,7 +652,14 @@ body:not(#pageHome) {
     height:272px;
     background-size: cover;
     right: 0;
-    top: -40px;
+
+    @include mediaTB{
+      top: -40px;
+    }
+    @include mediaSP{
+      right: 10px;
+      bottom: 45px;
+    }
   }
 }
 
@@ -262,10 +670,21 @@ body:not(#pageHome) {
   font-size: 13px;
   line-height: 2.5;
   color: #fff;
+  @include mediaSP{
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: 0.05em;
+  }
   h3{
     font-size: 20px;
     letter-spacing: 0.7em;
-    margin: 40px 0 40px;
+    margin: 40px 0;
+    font-weight: 500;
+    @include mediaSP{
+      font-size: 15px;
+      letter-spacing: 0.45em;
+      margin: 30px 0;
+    }
   }
   a{
     color: #80FFFF;
@@ -308,15 +727,18 @@ body:not(#pageHome) {
   }
   &::before{
     top: 0px;
-    left: 0px;
-    right: 0;
+    left: 5px;
+    right: -5px;
     bottom: 0;
   }
   &::after{
     top: 10px;
-    left: -10px;
-    right: 10px;
+    left: -5px;
+    right: 5px;
     bottom: -10px;
+  }
+  @include mediaSP{
+    padding: 60px 30px;
   }
 }
 
@@ -332,19 +754,33 @@ body:not(#pageHome) {
   left: 0;
   right: 0;
   z-index: 1;
+  @include mediaSP{
+    top: -22px;
+
+  }
 }
 
 /*==================================
     photograph / Project
 ==================================*/
 
+
+
 #pagePhotograph #works .w_title, #pageDorone #works .w_title {
   color: #fff;
   font-size: 17px;
+  font-weight: normal;
+  @include mediaSP{
+    font-size: 15px;
+  }
 }
 #archiveWorks #works .w_title, #taxoWorks #works .w_title {
   color: #fff;
   font-size: 17px;
+  font-weight: normal;
+  @include mediaSP{
+    font-size: 15px;
+  }
 }
 
 .works_images{
@@ -354,48 +790,32 @@ body:not(#pageHome) {
     justify-content: space-between;
   }
   li{
-    width: 32%;
-    &:first-child{
-      width: 100%;
-      margin: 0 0 80px;
-      .texts{
-        text-align: center;
-        .meta2 {
-         margin: 0 auto;
-        }
+    width: 100%;
+    text-align: center;
+    @include mediaSP{
+      margin: 0 0 50px;
+      &:last-child{
+        margin: 0 ;
+      }
+      .meta2{
+        margin: 0 auto;
       }
     }
-
-    a{
-      .meta2 {
-        position: relative;
-        color: #7F8FA5;
-        width: fit-content;
-        font-size: 12px;
-        &::before,&::after{
-          content: "";
-          position: absolute;
-          background-color: #7F8FA5;
-          height: 1px;
-          bottom: 3px;
-          left: 0;
-        }
-        &::before{
-          width: 100%;
-        }
-        &::after{
-          width: 0%;
-          @include trans;
-        }
+    @include mediaTB{
+      width: 32%;
+      .texts{
+        text-align: left;
       }
-      &:hover{
-        .meta2 {
-          &::before{
-            width: 0%;
-          }
-          &::after{
-            width: 100%;
-          }
+    }
+    &:first-child{
+      width: 100%;
+      @include mediaTB{
+        margin: 0 0 80px;
+      }
+      .texts{
+        text-align: center;
+        .meta2{
+          margin: 0 auto;
         }
       }
     }
@@ -410,24 +830,36 @@ body:not(#pageHome) {
 }
 
 .data_column{
-  display: flex;
-  justify-content: space-between;
   margin: 40px 0;
   color: #fff;
+  @include mediaTB{
+    display: flex;
+    justify-content: space-between;
+  }
 
   >div{
-    width: 49%;
+
     text-align: center;
+    @include mediaTB{
+      width: 49%;
+    }
   }
   h3{
     font-size: 22px;
     font-weight: bold;
     border-bottom: 1px #3E5C89 dashed;
-    padding: 35px 0;
+    padding: 40px 0;
+    line-height: 1;
+    @include mediaSP{
+      font-size: 15px;
+    }
   }
   .data_column_text{
     padding: 35px;
     text-align: left;
+    @include mediaSP{
+      padding: 25px;
+    }
     p{
       font-size: 13px;
       line-height: 2.5;
@@ -440,6 +872,9 @@ body:not(#pageHome) {
   }
   .high{
     background: #295371;
+    @include mediaSP{
+      margin: 0 0 20px;
+    }
     .data_column_text{
       position: relative;
       &::after{
@@ -451,6 +886,13 @@ body:not(#pageHome) {
         height: 162px;
         bottom: 30px;
         right: 20px;
+        @include mediaSP{
+          background-image: url(../images/photograph/icon_standard.png);
+          bottom: 20px;
+          right: 20px;
+          width: 122px;
+          height: 134px;
+        }
       }
     }
   }
@@ -467,6 +909,10 @@ body:not(#pageHome) {
         height: 134px;
         bottom: 10px;
         right: 50px;
+        @include mediaSP{
+          bottom: 20px;
+          right: 20px;
+        }
       }
     }
   }
@@ -477,11 +923,21 @@ body:not(#pageHome) {
 ==================================*/
 .contact{
   margin: 100px 0 20px;
+  @include mediaSP{
+    margin: 80px 0 0;
+  }
 
   .sectionTitle {
     span,.ja {
       color: #1A212B;
+      padding: 0 0 0 40px;
     }
+     .eng {
+      font-size: 38px;
+      padding: 0 0 0 40px;
+    }
+      margin-bottom: 0;
+      width: calc(100% - 40px);
   }
   a{
     background: #fff;
@@ -506,15 +962,17 @@ body:not(#pageHome) {
   .inner{
     &.backlogo{
       position: relative;
-      &::after{
-        content: "";
-        position: absolute;
-        background-image: url(../images/photograph/bg_project.png);
-        background-size: cover;
-        width: 460px;
-        height: 460px;
-        top: -100px;
-        right: 0;
+      @include mediaTB{
+        &::after{
+          content: "";
+          position: absolute;
+          background-image: url(../images/photograph/bg_project.png);
+          background-size: cover;
+          width: 460px;
+          height: 460px;
+          top: -100px;
+          right: 0;
+        }
       }
     }
   }
@@ -523,15 +981,17 @@ body:not(#pageHome) {
 .inner{
   &.backlogos{
     position: relative;
-    &::after{
-      content: "";
-      position: absolute;
-      background-image: url(../images/photograph/bg_project.png);
-      background-size: cover;
-      width: 280px;
-      height: 280px;
-      top: -100px;
-      right: 0;
+    @include mediaTB{
+      &::after{
+        content: "";
+        position: absolute;
+        background-image: url(../images/photograph/bg_project.png);
+        background-size: cover;
+        width: 280px;
+        height: 280px;
+        top: -100px;
+        right: 0;
+      }
     }
   }
 }
@@ -540,14 +1000,23 @@ body:not(#pageHome) {
     Project
 ==================================*/
 .bread_tarm{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  @include mediaTB{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }
 
 /*==================================
     Project / ページナビ(一覧)
 ==================================*/
+.pagination {
+  margin:40px 0;
+  @include mediaTB {
+    margin: 100px 0 50px;
+  }
+}
+
 .wp-pagenavi {
   span,a{
     background-color: #E6E6E6;
@@ -571,6 +1040,10 @@ body:not(#pageHome) {
       &::after{
         top: 17px;
         left: 18px;
+        @include mediaSP{
+          top: 10px;
+          left: 11px;
+        }
       }
 
     }
@@ -582,9 +1055,15 @@ body:not(#pageHome) {
       }
     }
   }
+  @include mediaPC {
+    a{
+      @include trans;
+      &:hover {
+        color:unset;
+      }
+    }
+  }
 }
-
-
 
 
 /*==================================
@@ -603,10 +1082,16 @@ body:not(#pageHome) {
   color: #fff;
   font-size: 13px;
   line-height: 2.5;
+  color: #fff;
+  @include mediaSP{
+    font-size: 12px;
+    text-align: left;
+    letter-spacing: 0.05em;
+  }
 }
 
 .point_border{
-  max-width: 1050px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   padding: 70px;
@@ -617,15 +1102,18 @@ body:not(#pageHome) {
   }
   &::before{
     top: 0px;
-    left: 0px;
-    right: 0;
+    left: 5px;
+    right: -5px;
     bottom: 0;
   }
   &::after{
     top: 10px;
-    left: -10px;
-    right: 10px;
+    left: -5px;
+    right: 5px;
     bottom: -10px;
+  }
+  @include mediaSP{
+    padding: 50px 30px 30px;
   }
 }
 
@@ -640,6 +1128,9 @@ body:not(#pageHome) {
   padding: 0 20px;
   left: 40px;
   z-index: 1;
+  @include mediaSP{
+    left: 10px;
+  }
 
   .sectionTitle {
     margin-bottom: 40px;
@@ -648,6 +1139,7 @@ body:not(#pageHome) {
       font-size: 11px;
     }
     .eng{
+      font-size: 26px;
       color: #fff;
     }
     &.center {
@@ -677,5 +1169,271 @@ body:not(#pageHome) {
         font-size: 16px;
       }
     }
+  }
+}
+
+
+.subTitle_wrap{
+  color: #fff;
+  @include mediaTB{
+    height: 240px;
+
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    background-size: cover;
+    width: 270px;
+    height: 210px;
+    opacity: 0.08;
+    top: 50px;
+    @include mediaSP{
+      content: none;
+    }
+  }
+  h2{
+    margin: 0 0 60px;
+    @include mediaSP{
+      margin: 0;
+    }
+  }
+  .text{
+    max-width: 780px;
+    margin:0 auto;
+    @include mediaSP{
+      margin: 20px auto 30px;
+    }
+  }
+
+  &.bg01{
+    &::before{
+    background-image: url(../images/photobook/bg01.png);
+    left: 120px;
+    }
+  }
+  &.bg02{
+    &::before{
+      background-image: url(../images/photobook/bg02.png);
+      right: 120px;
+      }
+  }
+  .subT_num{
+    @include mediaTB{
+      display: none;
+    }
+    font-size: 16px;
+    color: #7F8FA5;
+  }
+}
+
+
+#photobook {
+  padding: 20px 0 80px;
+  @include mediaSP{
+    padding: 20px 0 40px;
+  }
+}
+
+#album {
+  padding: 80px 0 0;
+  @include mediaSP{
+    padding: 0px 0 0;
+  }
+  .images {
+    .image {
+      width: 49.5%;
+    }
+  }
+  @include mediaTB {
+    .cols .images {
+      width: 100%;
+      .image {
+        margin-top: $tbMgnH;
+      }
+    }
+  }
+  .images {
+    .image {
+      width: 49.5%;
+    }
+  }
+}
+
+
+#pagePhotobook #album .images {
+  &.cols{
+    width: 100%;
+    @include mediaTB{
+      justify-content: space-between;
+      .col{
+        width: 32.5%;
+      }
+    }
+    @include mediaSP{
+      display: block;
+      .col{
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+
+/*==================================
+  PhotoRetouch
+==================================*/
+
+#pagePhotoRetouch {
+  .box_title {
+    background: unset;
+  }
+  ul.retouch{
+    color: #fff;
+  }
+}
+
+
+.beforeafter{
+  position: relative;
+
+  &:hover{
+    &::after{
+      content: "";
+      position: absolute;
+      background-image: url(../images/retouch/message.png);
+      width: 240px;
+      height: 62px;
+      background-size: cover;
+      z-index: 500;
+      left: 50%;
+      top: 40%;
+      margin-left: -120px;
+      margin-top: -31px;
+      pointer-events: none;
+    }
+  }
+
+}
+
+/*==================================
+  スライダーの縦長の画像調整
+==================================*/
+.slick-slide {
+  margin: 0 10px;
+  width: 240px;
+  img{
+    width: 100%;
+    max-height: 660px;
+    object-fit: contain;
+    @include mediaSP{
+      max-height: 230px;
+    }
+  }
+}
+
+
+
+
+
+
+/*==================================
+  twentytwenty
+==================================*/
+.twentytwenty-handle {
+  height: 50px;
+  width: 108px;
+  margin-left: -59px;
+  margin-top: -25px;
+  border: 3px solid white;
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  border-radius: 1000px;
+  -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  z-index: 40;
+  cursor: pointer;
+  @include mediaSP{
+    border: 2px solid white;
+    height: 23px;
+    width: 56px;
+    margin-left: -28px;
+    margin-top: -12px;
+  }
+}
+
+.twentytwenty-horizontal .twentytwenty-handle:before {
+  margin-bottom: 28px;
+  @include mediaSP{
+    margin-bottom: 16px;
+    width: 2px;
+  }
+}
+.twentytwenty-horizontal .twentytwenty-handle:after {
+  margin-top: 28px;
+  @include mediaSP{
+    margin-top: 16px;
+    width: 2px;
+  }
+}
+
+.twentytwenty-right-arrow {
+  background-image: url(../images/retouch/arr_right.png);
+  width: 12px;
+  height: 12px;
+  background-size: cover;
+  border-left: none;
+  right: 28%;
+  margin-right: -17px;
+  top: 19px;
+  background-repeat: no-repeat;
+  @include mediaSP{
+    background-image: url(../images/retouch/arr_right_sp.png);
+    width: 8px;
+    height: 7px;
+    top: 7px;
+    right: 20px;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    background-image: url(../images/retouch/arr_right_sp.png);
+  }
+}
+
+.twentytwenty-left-arrow {
+  background-image: url(../images/retouch/arr_left.png);
+  width: 12px;
+  height: 12px;
+  background-size: cover;
+  border-right: none;
+  left: 28%;
+  margin-left: -17px;
+  top: 19px;
+  background-repeat: no-repeat;
+  @include mediaSP{
+    background-image: url(../images/retouch/arr_left_sp.png);
+    width: 8px;
+    height: 7px;
+    top: 7px;
+    left: 20px;
+  }
+}
+
+
+.twentytwenty-before-label:before, .twentytwenty-after-label:before {
+  background: rgba(26, 33, 43, 1);
+}
+
+
+.pc_view{
+  @include mediaSP{
+    display: none;
+  }
+}
+.sp_view{
+  @include mediaTB{
+    display: none;
   }
 }

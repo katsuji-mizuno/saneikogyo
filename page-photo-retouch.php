@@ -1,21 +1,32 @@
 <?php get_header(); ?>
-<!-- for Page -->
+
+
 <!-- twentytwenty -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/twentytwenty.css" media="all"/>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/event.move.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/twentytwenty.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/retouch.js"></script>
+
+<!-- for Page -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/creative.css" media="all"/>
+
+
 </head>
 
 <body id="pagePhotoRetouch" class="artworks white_head">
 
   <?php get_template_part('parts_site_header_artworks'); ?>
 
-  <main class="contents addPdgT addPdgB bg_gray">
+  <main class="contents addPdgT addPdgB bg_deepblue">
+
+
+  <div class="inner backlogos">
+    <div class="sectionTitle flex">
+      <span class="eng futura">Photo Retouch</span><h2 class="ja">フォトレタッチ</h2>
+    </div>
 
 
     <div class="box_title">
-
       <!-- ぱんくず -->
       <div class="inner">
         <div id="breadcrumb">
@@ -31,12 +42,6 @@
             </li>
           </ul>
         </div>
-
-        <div class="sectionTitle center">
-          <span class="eng futura">Photo Retouch</span><h2 class="ja">フォトレタッチ</h2>
-        </div>
-        <p class="lead"> 建築写真の加工・レタッチを行います。青空加工、電線・電柱等の不要物除去、窓の写り込み反射の消去、床合成などが可能です、お気軽にご相談ください。</p>
-
       </div><!-- inner -->
     </div><!-- box_title -->
 
@@ -45,14 +50,6 @@
         <ul class="retouch">
           <li>
             <h2 class="subTitle align_center fadeFromBottom">基本補正</h2>
-            <!-- <div class="images fadeFromBottom">
-              <div class="image before">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/basic_before_sp.jpg" alt="基本補正BEFORE">
-              </div>
-              <div class="image after">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/basic_after_sp.jpg" alt="基本補正AFTER ">
-              </div>
-            </div> -->
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/basic_before_sp.jpg" class="js_image_switch" alt="基本補正BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/basic_after_sp.jpg" class="js_image_switch" alt="基本補正AFTER ">
@@ -68,14 +65,6 @@
           </li>
           <li>
             <h2 class="subTitle align_center fadeFromBottom">HDR処理</h2>
-            <!-- <div class="images fadeFromBottom">
-              <div class="image before">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/hdr_before_sp.jpg" alt="HDR処理BEFORE">
-              </div>
-              <div class="image after">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/hdr_after_sp.jpg" alt="HDR処理AFTER">
-              </div>
-            </div> -->
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/hdr_before_sp.jpg" class="js_image_switch" alt="HDR処理BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/hdr_after_sp.jpg" class="js_image_switch" alt="HDR処理AFTER ">
@@ -91,14 +80,6 @@
           </li>
           <li>
             <h2 class="subTitle align_center fadeFromBottom">電線・電柱の除去</h2>
-            <!-- <div class="images fadeFromBottom">
-              <div class="image before">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ew1_before_sp.jpg" alt="電線・電柱の除去BEFORE">
-              </div>
-              <div class="image after">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ew1_after_sp.jpg" alt="電線・電柱の除去AFTER">
-              </div>
-            </div> -->
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ew1_before_sp.jpg" class="js_image_switch" alt="基本補正BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ew1_after_sp.jpg" class="js_image_switch" alt="基本補正AFTER ">
@@ -115,14 +96,6 @@
           </li>
           <li>
             <h2 class="subTitle align_center fadeFromBottom">不要物の除去</h2>
-           <!--  <div class="images fadeFromBottom">
-              <div class="image before">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ut_before_sp.jpg" alt="不要物の除去BEFORE">
-              </div>
-              <div class="image after">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ut_after_sp.jpg" alt="不要物の除去AFTER">
-              </div>
-            </div> -->
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ut_before_sp.jpg" class="js_image_switch" alt="不要物の除去BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ut_after_sp.jpg" class="js_image_switch" alt="不要物の除去AFTER ">
@@ -139,14 +112,6 @@
           </li>
           <li>
             <h2 class="subTitle align_center fadeFromBottom">空と日照の合成</h2>
-            <!-- <div class="images">
-              <div class="image before">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/sky_before_sp.jpg" alt="空と日照の合成BEFORE">
-              </div>
-              <div class="image after">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/sky_after_sp.jpg" alt="空と日照の合成AFTER">
-              </div>
-            </div> -->
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/sky_before_sp.jpg" class="js_image_switch" alt="空と日照の合成BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/sky_after_sp.jpg" class="js_image_switch" alt="空と日照の合成AFTER ">
@@ -162,14 +127,6 @@
           </li>
           <li>
             <h2 class="subTitle align_center fadeFromBottom">その他の合成</h2>
-            <!-- <div class="images fadeFromBottom">
-              <div class="image before">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/composition_before_sp.jpg" alt="その他の合成BEFORE">
-              </div>
-              <div class="image after">
-                <img src="<?php bloginfo('template_directory'); ?>/images/retouch/composition_before_pc.jpg" alt="その他の合成AFTER">
-              </div>
-            </div> -->
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/composition_before_sp.jpg" class="js_image_switch" alt="その他の合成BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/composition_after_pc.jpg" class="js_image_switch" alt="その他の合成AFTER ">
@@ -185,13 +142,14 @@
           </li>
         </ul>
       </div>
-
     </div>
 
     <!-- go to upsite -->
     <div class="btnWrap goto_up">
       <a href="<?php echo home_url(); ?>/photograph/" class="hvr-underline-from-left">PHOTOGRAPH HOME</a>
     </div>
+
+  </div>
 
 
 

@@ -11,56 +11,62 @@
 
 <!-- for Page -->
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/photo_works.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/creative.css" media="all"/>
+
 </head>
 
 <body id="taxoWorks" class="artworks white_head">
 
   <?php get_template_part('parts_site_header_artworks'); ?>
 
-  <main class="contents addPdgT addPdgB">
+  <main class="contents addPdgT addPdgB bg_deepblue">
 
-    <!-- ぱんくず -->
-    <div id="breadcrumb">
-      <div class="inner">
-        <ul class="breadlist">
+  <div class="inner backlogo">
+      <div class="sectionTitle flex">
+        <span class="eng futura">Project</span><h2 class="ja">撮影実績</h2>
+      </div>
+
+      <div class="bread_tarm">
+
+        <!-- ぱんくず -->
+        <div id="breadcrumb">
+          <div class="inner">
+            <ul class="breadlist">
+              <li>
+                <a href="<?php echo home_url(); ?>" class="hvr-underline-from-left">HOME</a>
+              </li>
+              <li>
+                <a href="<?php echo home_url(); ?>/creative/photograph/" class="hvr-underline-from-left">施工・竣工写真</a>
+              </li>
+              <li>
+                <a href="<?php echo home_url(); ?>/photo_works/" class="hvr-underline-from-left">撮影事例</a>
+              </li>
+              <li>
+                <span><?php single_term_title(); ?></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- タクソノミー 一覧 -->
+        <ul class="tarms">
           <li>
-            <a href="<?php echo home_url(); ?>" class="hvr-underline-from-left">HOME</a>
+            <a href="<?php echo home_url(); ?>/photo_works/" class="hvr-underline-from-left">ALL</a></li>
           </li>
-          <li>
-            <a href="<?php echo home_url(); ?>/creative/photograph/" class="hvr-underline-from-left">施工・竣工写真</a>
-          </li>
-          <li>
-             <a href="<?php echo home_url(); ?>/photo_works/" class="hvr-underline-from-left">撮影事例</a>
-          </li>
-          <li>
-            <span><?php single_term_title(); ?></span>
-          </li>
+          <?php
+            $current_term = $term;
+            $terms = get_terms('works_category', array('hide_empty' => false));
+            foreach ( $terms as $term ){
+              if ($current_term == $term->slug) {
+                echo '<li class="current"><a href="'.get_term_link($term->slug,'works_category').'">'.$term->name.'</a></li>';
+              }else{
+                echo '<li><a href="'.get_term_link($term->slug,'works_category').'" class="hvr-underline-from-left">'.$term->name.'</a></li>';
+              }
+            }
+            ?>
+
         </ul>
       </div>
-    </div>
-
-    <div class="inner">
-      <div class="sectionTitle center">
-        <span class="eng futura">Works</span><h2 class="ja">撮影事例</h2>
-      </div>
-
-      <!-- タクソノミー 一覧 -->
-      <ul class="tarms">
-        <li>
-          <a href="<?php echo home_url(); ?>/photo_works/" class="hvr-sweep-to-right">すべて</a></li>
-        </li>
-      <?php
-        $current_term = $term;
-        $terms = get_terms('works_category', array('hide_empty' => false));
-        foreach ( $terms as $term ){
-          if ($current_term == $term->slug) {
-            echo '<li class="current"><a href="'.get_term_link($term->slug,'works_category').'">'.$term->name.'</a></li>';
-          }else{
-            echo '<li><a href="'.get_term_link($term->slug,'works_category').'" class="hvr-sweep-to-right">'.$term->name.'</a></li>';
-          }
-        }
-        ?>
-      </ul>
 
       <!-- 一覧 -->
       <div class="section" id="works">
@@ -68,7 +74,7 @@
           <div class="inner">
 
             <div class="listWrap">
-             
+
               <?php $paged = get_query_var('paged') ? get_query_var('paged') : 1 ; ?>
               <?php if (have_posts()) : ?>
 
@@ -78,10 +84,10 @@
                   <?php while (have_posts()) : the_post(); ?>
                   <li>
                   <!-- <a href="<?php the_permalink(); ?>" -->
-                  <a href="javascript:void(0)" class="modal_open" data-remodal-target="modal" 
+                  <a href="javascript:void(0)" class="modal_open" data-remodal-target="modal"
 
-                    data-title    = "<?php the_title(); ?>" 
-                    data-terms    = "[<?php 
+                    data-title    = "<?php the_title(); ?>"
+                    data-terms    = "[<?php
                       $terms = get_the_terms($post->ID,'works_category');
                       $count = count($terms);//タクソノミーの個数カウント
                       if ($count >= 1) {
@@ -96,26 +102,36 @@
                       }else{
                         echo "&quot;". "なし" . "&quot;";
                       }
-                    ?>]" 
-                    data-time       = "<?php the_field('time'); ?>" 
-                    data-cut        = "<?php the_field('cut'); ?>" 
-                    data-service    = "<?php the_field('service'); ?>" 
-                    data-imageset   = "[<?php 
+                    ?>]"
+                    data-time       = "<?php the_field('time'); ?>"
+                    data-cut        = "<?php the_field('cut'); ?>"
+                    data-service    = "<?php the_field('service'); ?>"
+                    data-imageset   = "[<?php
                       $idx=0;
                       if(have_rows('photos')):
-                        while(have_rows('photos')): the_row(); 
+                        while(have_rows('photos')): the_row();
                           if ($idx > 0) {
                             echo ",";
                           }
                           echo "&quot;";
-                          the_sub_field('photo'); 
+                          the_sub_field('photo');
                           echo "&quot;";
                           $idx++;
-                        endwhile; 
+                        endwhile;
                       endif;
                     ?>]"
                   >
-                    <div class="meta">
+
+                    <div class="image" class="fit-cover">
+                      <?php if (has_post_thumbnail()) : ?>
+                          <?php the_post_thumbnail(); ?>
+                      <?php else : ?>
+                          <img src="<?php bloginfo('template_url'); ?>/images/photograph/noimage.png" alt="noimage">
+                      <?php endif ; ?>
+                    </div>
+                    <div class="texts">
+                      <h3 class="w_title"><?php the_title(); ?></h3>
+                      <div class="meta2">
                       <?php
                         $terms = get_the_terms($post->ID,'works_category');
                         $count = count($terms);//タクソノミーの個数カウント
@@ -128,16 +144,6 @@
                         }
                       ?>
                     </div>
-                    <div class="image" class="fit-cover">
-                      <?php if (has_post_thumbnail()) : ?>
-                          <?php the_post_thumbnail(); ?>
-                      <?php else : ?>
-                          <img src="<?php bloginfo('template_url'); ?>/images/photograph/noimage.png" alt="noimage">
-                      <?php endif ; ?>
-                    </div>
-                    <div class="texts">
-                      
-                      <h3 class="w_title"><?php the_title(); ?></h3>
                     </div>
                   </a>
                 </li>
@@ -149,14 +155,11 @@
 
               <div class="pagination rubik">
                 <?php wp_pagenavi(); ?>
-              </div> 
+              </div>
 
             </div><!-- listWrap -->
 
-            <!-- go to upsite -->
-            <div class="btnWrap goto_up">
-              <a href="<?php echo home_url(); ?>/photograph/" class="hvr-underline-from-left">PHOTOGRAPH HOME</a>
-            </div>
+
 
           </div>
         </div>

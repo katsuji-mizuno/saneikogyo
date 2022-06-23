@@ -291,7 +291,6 @@ a.btn_round {
   }
 }
 
-
 /*=================
   inner
 =================*/
@@ -352,19 +351,19 @@ a.btn_round {
 body.artworks {
   .contents {
     &.addPdgT {
-    padding-top: 71px;
-  }
-  &.addPdgB {
-    padding-bottom: 40px;
-  }
-  @include mediaTB {
-    &.addPdgT {
-      padding-top: 107px;
+      padding-top: 71px;
     }
     &.addPdgB {
-      padding-bottom: 50px;
+      padding-bottom: 40px;
     }
-  }
+    @include mediaTB {
+      &.addPdgT {
+        padding-top: 107px;
+      }
+      &.addPdgB {
+        padding-bottom: 50px;
+      }
+    }
   }
 }
 

@@ -11,6 +11,7 @@
 
 <!-- for Page -->
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/photo_works.js"></script>
+
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/creative.css" media="all"/>
 
 
@@ -22,7 +23,7 @@
 
   <?php get_template_part('parts_site_header_artworks'); ?>
 
-  <main class="contents addPdgT addPdgB">
+  <main class="contents addPdgT addPdgB bg_deepblue">
 
     <div class="inner backlogo">
       <div class="sectionTitle flex">
@@ -124,7 +125,7 @@
                     </div>
                     <div class="texts">
                       <h3 class="w_title"><?php the_title(); ?></h3>
-                      <div class="meta">
+                      <div class="meta2">
                       <?php
                         $terms = get_the_terms($post->ID,'works_category');
                         $count = count($terms);//タクソノミーの個数カウント

@@ -1,0 +1,26 @@
+@import "base";
+@import "common";
+
+
+
+/*==================================
+  ドローン
+==================================*/
+
+#spec{
+  table{
+    width: 100%;
+    td{
+      border: 1px solid #E4E4E4;
+      background: #fff;
+      padding: 10px;
+      &.tbl_tit{
+        background: #DDDDDD;
+      }
+    }
+  }
+}
+
+#pageDorone #spec .sub_title {
+  margin: 0 0 20px 0;
+}
