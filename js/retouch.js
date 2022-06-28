@@ -2,18 +2,10 @@
   ビフォーアフター
 --------------------------------------*/
 
-$('.subTitle').css('background-color','orange');
 
 
 $(window).on('load resize',function(){
 
-  $('.twentytwenty-handle').on('click', function() {
-    console.log('cccc')
-  });
-  console.log('ccc')
-
-
-  $('.twentytwenty-handle').hide();
 
   // if (window.innerWidth > 750) {
     $(".beforeafter").twentytwenty({
@@ -21,13 +13,13 @@ $(window).on('load resize',function(){
     });
   // }
 
-  // $(".beforeafter").twentytwenty({
-  //   default_offset_pct: 0.5, // How much of the before image is visible when the page loads
-  //   orientation: 'horizontal', // Orientation of the before and after images ('horizontal' or 'vertical')
-  //   //before_label: 'January 2017', // Set a custom before label
-  //   //after_label: 'March 2017', // Set a custom after label
-  //   no_overlay: true, //Do not show the overlay with before and after
-  //   move_with_handle_only: true, // Allow a user to swipe anywhere on the image to control slider movement.
-  //   click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
-  // });
+
+  $('.beforeafter').on('touchstart', function() {
+    $('.ba_expl').fadeOut(500);
+  });
+  $('.beforeafter').on('mousedown', function() {
+    $('.ba_expl').fadeOut(500);
+  });
+
+
 });

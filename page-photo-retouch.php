@@ -53,6 +53,7 @@
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/basic_before_sp.jpg" class="js_image_switch" alt="基本補正BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/basic_after_sp.jpg" class="js_image_switch" alt="基本補正AFTER ">
+              <div class="ba_expl"></div>
             </div>
             <div class="texts fadeFromBottom">
               <p class="text noMgn">
@@ -68,6 +69,7 @@
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/hdr_before_sp.jpg" class="js_image_switch" alt="HDR処理BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/hdr_after_sp.jpg" class="js_image_switch" alt="HDR処理AFTER ">
+              <div class="ba_expl"></div>
             </div>
             <div class="texts fadeFromBottom">
               <p class="text noMgn">
@@ -83,6 +85,8 @@
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ew1_before_sp.jpg" class="js_image_switch" alt="基本補正BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ew1_after_sp.jpg" class="js_image_switch" alt="基本補正AFTER ">
+              <div class="ba_expl"></div>
+
             </div>
             <div class="texts fadeFromBottom">
               <p class="text noMgn">
@@ -99,6 +103,8 @@
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ut_before_sp.jpg" class="js_image_switch" alt="不要物の除去BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/ut_after_sp.jpg" class="js_image_switch" alt="不要物の除去AFTER ">
+              <div class="ba_expl"></div>
+
             </div>
             <div class="texts fadeFromBottom">
               <p class="text noMgn">
@@ -115,6 +121,8 @@
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/sky_before_sp.jpg" class="js_image_switch" alt="空と日照の合成BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/sky_after_sp.jpg" class="js_image_switch" alt="空と日照の合成AFTER ">
+              <div class="ba_expl"></div>
+
             </div>
             <div class="texts fadeFromBottom">
               <p class="text noMgn">
@@ -130,6 +138,8 @@
             <div class="beforeafter">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/composition_before_sp.jpg" class="js_image_switch" alt="その他の合成BEFORE">
               <img src="<?php bloginfo('template_directory'); ?>/images/retouch/composition_after_pc.jpg" class="js_image_switch" alt="その他の合成AFTER ">
+              <div class="ba_expl"></div>
+
             </div>
             <div class="texts fadeFromBottom">
               <p class="text noMgn">

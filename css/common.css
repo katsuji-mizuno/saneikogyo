@@ -1333,6 +1333,68 @@ body.scroll.artworks #header {
   font-size: 10px;
   color: #A7A7A7;
 }
+#menu .g_sns_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#menu .g_sns_menu li {
+  width: 18px;
+  margin: 0 20px 0 0;
+}
+#menu .g_sns_menu li a {
+  background-size: contain;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#menu .g_sns_menu li.btn_fb a {
+  background-image: url(../images/common/icon_fb.png);
+  width: 18px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #menu .g_sns_menu li.btn_fb a:hover {
+    background-image: url(../images/common/icon_fb_on.png);
+  }
+}
+@media all and (max-width: 750px) {
+  #menu .g_sns_menu li.btn_fb a {
+    background-image: url(../images/common/icon_fb_on.png);
+  }
+}
+#menu .g_sns_menu li.btn_tw a {
+  background-image: url(../images/common/icon_tw.png);
+  width: 20px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #menu .g_sns_menu li.btn_tw a:hover {
+    background-image: url(../images/common/icon_tw_on.png);
+  }
+}
+@media all and (max-width: 750px) {
+  #menu .g_sns_menu li.btn_tw a {
+    background-image: url(../images/common/icon_tw_on.png);
+  }
+}
+#menu .g_sns_menu li.btn_ig a {
+  background-image: url(../images/common/icon_ig.png);
+  width: 17px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #menu .g_sns_menu li.btn_ig a:hover {
+    background-image: url(../images/common/icon_ig_on.png);
+  }
+}
+@media all and (max-width: 750px) {
+  #menu .g_sns_menu li.btn_ig a {
+    background-image: url(../images/common/icon_ig_on.png);
+  }
+}
 @media screen and (max-width: 374px) {
   #menu {
     padding-left: 70px;
@@ -1636,21 +1698,21 @@ body.menu_dark:not(.open) #btnMenu span {
 ヘッダー(Artworks用)
 ----------------------------*/
 body.artworks #nav_cover {
-  background-color: #212A36;
+  background-color: #000;
 }
 body.artworks #header .logo_h {
   width: 160px;
 }
 @media all and (min-width: 751px) {
   body.artworks #header .logo_h {
-    width: 200px;
+    width: 220px;
   }
 }
 body.artworks #btnMenu span {
-  background-color: #212A36;
+  background-color: #000;
 }
 body.artworks #menu {
-  background-color: #212A36;
+  background-color: #000;
   background-image: none;
 }
 body.artworks #menu li.lv1 a .eng {
@@ -2199,7 +2261,7 @@ body.artworks .btn_read_more.white .link_text {
 .link_icon svg:nth-child(1) {
   z-index: 1;
 }
-.link_icon .over {
+.link_icon svg.over {
   opacity: 0;
 }
 .link_icon svg.over .svg-elem-1 {
@@ -2612,12 +2674,17 @@ body.pg_dark .top_pagination a.active {
   color: #002664;
   z-index: 23;
 }
-
 @media all and (max-width: 1024px) {
-  .panel_ani {
+  #top_about .panel_ani,
+#top_service .panel_ani,
+#top_recruit .panel_ani,
+#top_contact .panel_ani {
     position: relative;
   }
-  .panel_ani::after {
+  #top_about .panel_ani::after,
+#top_service .panel_ani::after,
+#top_recruit .panel_ani::after,
+#top_contact .panel_ani::after {
     content: "";
     width: 100%;
     height: calc(var(--vh, 1vh) * 100);
@@ -2628,6 +2695,7 @@ body.pg_dark .top_pagination a.active {
     z-index: 21;
   }
 }
+
 @media all and (min-width: 751px) {
   #top_about .panel_inner,
 #top_service .panel_inner,
@@ -2933,58 +3001,6 @@ TOP feature　ページャー
   right: 30px;
   bottom: 50px;
   z-index: 35;
-  /*
-  .prev,
-  .next {
-    display: inline-block;
-    position: relative;
-    height: 47px;
-    width: 30px;
-    opacity: 1;
-    @include trans;
-    &.disabled {
-      opacity: 0.4;
-    }
-    &::before,
-    &::after {
-      content:"";
-      display: block;
-      position: absolute;
-      @include trans;
-    }
-    &::before {
-      width: 10px;
-      height: 1px;
-      background-color: #fff;
-      top: 50%;
-    }
-    &::after {
-      width: 7px;
-      height: 7px;
-      top:calc(50% - 3px);
-    }
-  }
-  .next {
-    &::before,&::after {
-      right: 0;
-    }
-    &::after {
-      transform:rotate(45deg);
-      border-top: 1px solid #fff;
-      border-right: 1px solid #fff;
-    }
-  }
-  .prev {
-    &::before,&::after {
-      left: 0;
-    }
-    &::after {
-      transform:rotate(-45deg);
-      border-top: 1px solid #fff;
-      border-left: 1px solid #fff;
-    }
-  }
-  */
 }
 .feature_pagenation .f_page {
   width: 50px;
@@ -3413,9 +3429,15 @@ TOP feature　ページャー
 =================*/
 #mvSubMenu {
   position: absolute;
-  right: 20px;
-  bottom: 35px;
+  right: 40px;
+  bottom: 40px;
   z-index: 19;
+}
+@media all and (max-width: 750px) {
+  #mvSubMenu {
+    right: 20px;
+    bottom: 20px;
+  }
 }
 #mvSubMenu .subMenus a {
   position: relative;
@@ -3439,6 +3461,89 @@ TOP feature　ページャー
 }
 #mvSubMenu .subMenus li + li {
   margin-top: 20px;
+}
+
+/*=================
+  TOP SNSボタン
+=================*/
+#mvSnsBtn {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 19;
+}
+@media all and (max-width: 750px) {
+  #mvSnsBtn {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+#mvSnsBtn p {
+  color: #fff;
+  letter-spacing: 0.4em;
+  font-weight: normal;
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+@media all and (max-width: 750px) {
+  #mvSnsBtn p {
+    display: none;
+  }
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+#mvSnsBtn .SnsBtns li {
+  width: 18px;
+  margin: 0 20px 0 0;
+}
+@media all and (max-width: 750px) {
+  #mvSnsBtn .SnsBtns li {
+    margin: 20px 0 0 0;
+  }
+}
+#mvSnsBtn .SnsBtns li a {
+  background-size: contain;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#mvSnsBtn .SnsBtns li.btn_fb a {
+  background-image: url(../images/common/icon_fb_on.png);
+  width: 18px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns li.btn_fb a:hover {
+    opacity: 0.8;
+  }
+}
+#mvSnsBtn .SnsBtns li.btn_tw a {
+  background-image: url(../images/common/icon_tw_on.png);
+  width: 20px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns li.btn_tw a:hover {
+    opacity: 0.8;
+  }
+}
+#mvSnsBtn .SnsBtns li.btn_ig a {
+  background-image: url(../images/common/icon_ig_on.png);
+  width: 17px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns li.btn_ig a:hover {
+    opacity: 0.8;
+  }
 }
 
 /*==================================
@@ -5564,7 +5669,7 @@ body.artworks .subTitle {
 }
 @media all and (min-width: 751px) {
   #pagePhotograph .mainTitle .eng {
-    height: 188px;
+    height: 140px;
   }
   #pagePhotograph .mainTitle .lead {
     margin-top: 50px;
@@ -5644,6 +5749,9 @@ body.artworks .subTitle {
   #pagePhotograph #features .f_item {
     padding: 40px 25px;
   }
+}
+#pagePhotograph #photobook {
+  background-color: #fff;
 }
 @media all and (max-width: 750px) {
   #pagePhotograph #photobook .cols .image {
@@ -5816,6 +5924,18 @@ body.artworks .subTitle {
 #pagePhotograph #works,
 #pageDorone #works {
   position: relative;
+}
+#pagePhotograph #works::before,
+#pageDorone #works::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #fff;
+  width: 66%;
+  height: calc(150px + 29.6vw);
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 #pagePhotograph #works .rel,
 #pageDorone #works .rel {

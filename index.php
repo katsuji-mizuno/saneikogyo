@@ -12,7 +12,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/intersection-observer.js"></script>
 
 <!-- <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/home.js"></script> 動作が不安定のため下に記述あり -->
- 
+
 </head>
 
 <body id="pageHome" class="top">
@@ -60,6 +60,20 @@
                 <span class="eng futura">Draw future</span><span class="ja">測量で未来を描く</span>
               </div>
             </div>
+            <div id="mvSnsBtn">
+              <p class="futura">SNS</p>
+              <ul class="SnsBtns">
+                <li class="btn_fb">
+                  <a href="https://www.facebook.com/sanei.kogyo.official/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </li>
+                <li class="btn_tw">
+                  <a href="https://mobile.twitter.com/sanei_official_" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </li>
+                <li class="btn_ig">
+                  <a href="https://www.instagram.com/sanei_kogyo_official" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+              </ul>
+            </div>
             <div id="mvSubMenu">
               <ul class="subMenus">
                 <li>
@@ -74,7 +88,7 @@
           <a href="javascript:void(0)" data-href="#top_about" class="top_scroll">
             <img src="<?php bloginfo('template_directory'); ?>/images/common/scroll_white.svg" alt="scroll">
           </a>
-          
+
         </section>
 
         <!-- 会社概要 -->
@@ -105,7 +119,7 @@
                 </div>
               </div>
             </div>
-            
+
           </div><!-- panel_ani -->
           <a href="javascript:void(0)" data-href="#top_feature" class="top_scroll">
             <img src="<?php bloginfo('template_directory'); ?>/images/common/scroll_default.svg" alt="scroll">
@@ -304,7 +318,7 @@
                   <div class="top_big_title">
                     <span class="eng futura">Recruit</span><h2 class="ja">採用情報</h2>
                   </div>
-                  
+
                   <div class="btn_cols">
                     <div class="btn_col">
                       <div class="image">
@@ -321,7 +335,7 @@
                     </div>
                     <div class="btn_col">
                       <div class="image">
-                        <img src="<?php bloginfo('template_directory'); ?>/images/home/recruit_voice.svg" alt=""> 
+                        <img src="<?php bloginfo('template_directory'); ?>/images/home/recruit_voice.svg" alt="">
                       </div>
                       <h3 class="subTitle">先輩社員の声<br><br></h3>
                       <div class="circleBtnWrap">
@@ -413,8 +427,8 @@
         <a id="pagination6" href="#top_contact" data-hash="#top_contact"></a>
       </nav>
 
-      
-      
+
+
     </main>
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/home.js"></script>
 

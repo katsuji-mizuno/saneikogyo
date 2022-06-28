@@ -73,26 +73,21 @@
     <div class="section" id="works">
       <div class="rel">
         <div class="inner">
-
-            <div class="sectionTitle fadeFromBottom center">
-              <span class="eng futura">Project</span><h2 class="ja">撮影実績</h2>
-            </div>
-
+          <div class="sectionTitle fadeFromBottom center">
+            <span class="eng futura">Project</span><h2 class="ja">撮影実績</h2>
+          </div>
           <div class="works_images">
 
            <?php
-
             $args = array(
                 'post_type' => 'photo_works',
                 'posts_per_page' => 4,
                 'paged' => $paged,
             ); ?>
             <?php query_posts( $args ); ?>
-              <?php if ( have_posts() ) :  ?>
-
+            <?php if ( have_posts() ) :  ?>
 
             <ul class="fadeFromBottom">
-
               <?php while ( have_posts() ) : the_post(); ?>
               <li>
                 <a href="javascript:void(0)" class="modal_open" data-remodal-target="modal"

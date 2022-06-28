@@ -27,14 +27,14 @@
               </a>
             </div>
           </li>
+
+
+
           <li>
             <div id="nav_cover"></div>
             <nav id="menu">
-              <div class="logo_h">
-                <a href="<?php echo home_url(); ?>">
-                  <img src="<?php bloginfo('template_directory'); ?>/images/common/logo_white.png" alt="株式会社サンエイ興業">
-                </a>
-              </div>
+
+
               <ul class="g_top_menu">
                 <li class="lv1 bound">
                   <a href="<?php echo home_url() ?>/"><span class="eng futura" data-text="Home">Home</span><span class="ja" data-text="ホーム">ホーム</span></a>
@@ -73,6 +73,21 @@
                 </li>
                 <li class="lv1 bound">
                   <a href="<?php echo home_url() ?>/about#access"><span class="eng futura" data-text="Access">Access</span><span class="ja" data-text="アクセス">アクセス</span></a>
+                </li>
+
+                <li class="lv1 bound">
+                  <ul class="g_sns_menu">
+                    <li class="lv2 btn_fb">
+                      <a href="https://www.facebook.com/sanei.kogyo.official/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </li>
+                    <li class="lv2 btn_tw">
+                      <a href="https://mobile.twitter.com/sanei_official_" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    </li>
+                    <li class="lv2 btn_ig">
+                      <a href="https://www.instagram.com/sanei_kogyo_official" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </li>
+                  </ul>
+
                 </li>
 
               </ul>

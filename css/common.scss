@@ -351,19 +351,19 @@ a.btn_round {
 body.artworks {
   .contents {
     &.addPdgT {
-      padding-top: 71px;
+    padding-top: 71px;
+  }
+  &.addPdgB {
+    padding-bottom: 40px;
+  }
+  @include mediaTB {
+    &.addPdgT {
+      padding-top: 107px;
     }
     &.addPdgB {
-      padding-bottom: 40px;
+      padding-bottom: 50px;
     }
-    @include mediaTB {
-      &.addPdgT {
-        padding-top: 107px;
-      }
-      &.addPdgB {
-        padding-bottom: 50px;
-      }
-    }
+  }
   }
 }
 
@@ -777,6 +777,66 @@ body.scroll.artworks #header {
         }
       }
     }
+    .g_sns_menu {
+      display: flex;
+      li{
+        width: 18px;
+        margin: 0 20px 0 0;
+        a{
+          background-size: contain;
+          text-indent: -9999px;
+          background-repeat: no-repeat;
+          background-position-y: center;
+          @include trans;
+        }
+        &.btn_fb{
+          a{
+            background-image: url(../images/common/icon_fb.png);
+            width: 18px;
+            height: 18px;
+            @include mediaTB{
+              &:hover{
+                background-image: url(../images/common/icon_fb_on.png);
+              }
+            }
+            @include mediaSP{
+              background-image: url(../images/common/icon_fb_on.png);
+            }
+          }
+        }
+        &.btn_tw{
+          a{
+            background-image: url(../images/common/icon_tw.png);
+            width: 20px;
+            height: 18px;
+            @include mediaTB{
+              &:hover{
+                background-image: url(../images/common/icon_tw_on.png);
+              }
+            }
+            @include mediaSP{
+              background-image: url(../images/common/icon_tw_on.png);
+            }
+          }
+        }
+        &.btn_ig{
+          a{
+            background-image: url(../images/common/icon_ig.png);
+            width: 17px;
+            height: 18px;
+            @include mediaTB{
+              &:hover{
+                background-image: url(../images/common/icon_ig_on.png);
+              }
+            }
+            @include mediaSP{
+              background-image: url(../images/common/icon_ig_on.png);
+            }
+          }
+        }
+      }
+    }
+
     @media screen and (max-width: 374px) {
       padding-left: 70px;
     }
@@ -1068,7 +1128,7 @@ body.menu_dark:not(.open) {
 body.artworks {
   //////// ヘッダー //////////
   #nav_cover {
-    background-color: #212A36;
+    background-color: #000;
   }
   //////// ヘッダー //////////
   #header {
@@ -1077,18 +1137,18 @@ body.artworks {
     }
     @include mediaTB {
       .logo_h {
-        width: 200px;
+        width: 220px;
       }
     }
   }
   //////// メニュー //////////
   #btnMenu {
     span {
-      background-color: #212A36;
+      background-color: #000;
     }
   }
   #menu {
-    background-color:#212A36;
+    background-color:#000;
     background-image: none;
     li {
       &.lv1 {
@@ -1617,7 +1677,7 @@ body.artworks {
       z-index: 1;
     }
   }
-    .over {
+  svg.over {
     opacity: 0;
   }
   svg.over .svg-elem-1 {
@@ -2039,9 +2099,8 @@ body.pg_dark {
     color: $navy;
     z-index: 23;
   }
-}
-@include mediaSPTB {
 
+@include mediaSPTB {
     .panel_ani {
       position: relative;
       &::after {
@@ -2055,7 +2114,7 @@ body.pg_dark {
         z-index: 21;
       }
     }
-
+  }
 }
 @include mediaTB {
   #top_about,
@@ -2196,8 +2255,7 @@ body.pg_dark {
     }
   }
   @include mediaSP {
-    // background:url(../images/home/feature_bg_sp.jpg) no-repeat;
-    // background-size: cover;
+
     .f_panels {
       &>li {
         &:nth-of-type(1) {
@@ -2347,58 +2405,7 @@ TOP feature　ページャー
   right: 30px;
   bottom: 50px;
   z-index: 35;
-  /*
-  .prev,
-  .next {
-    display: inline-block;
-    position: relative;
-    height: 47px;
-    width: 30px;
-    opacity: 1;
-    @include trans;
-    &.disabled {
-      opacity: 0.4;
-    }
-    &::before,
-    &::after {
-      content:"";
-      display: block;
-      position: absolute;
-      @include trans;
-    }
-    &::before {
-      width: 10px;
-      height: 1px;
-      background-color: #fff;
-      top: 50%;
-    }
-    &::after {
-      width: 7px;
-      height: 7px;
-      top:calc(50% - 3px);
-    }
-  }
-  .next {
-    &::before,&::after {
-      right: 0;
-    }
-    &::after {
-      transform:rotate(45deg);
-      border-top: 1px solid #fff;
-      border-right: 1px solid #fff;
-    }
-  }
-  .prev {
-    &::before,&::after {
-      left: 0;
-    }
-    &::after {
-      transform:rotate(-45deg);
-      border-top: 1px solid #fff;
-      border-left: 1px solid #fff;
-    }
-  }
-  */
+
   .f_page {
     width: 50px;
     height: 40px;
@@ -2842,9 +2849,13 @@ body:not(.top)#pageHome {
 =================*/
 #mvSubMenu {
   position: absolute;
-  right: 20px;
-  bottom: 35px;
+  right: 40px;
+  bottom: 40px;
   z-index: 19;
+  @include mediaSP{
+    right: 20px;
+    bottom: 20px;
+  }
   .subMenus {
     a {
       position: relative;
@@ -2873,6 +2884,86 @@ body:not(.top)#pageHome {
   }
 }
 
+
+/*=================
+  TOP SNSボタン
+=================*/
+#mvSnsBtn {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 19;
+  @include mediaSP{
+    left: 20px;
+    bottom: 20px;
+  }
+  p{
+    color: #fff;
+    letter-spacing: 0.4em;
+    font-weight: normal;
+    font-size: 13px;
+    margin: 0 0 20px;
+    @include mediaSP{
+      display: none;
+    }
+  }
+  .SnsBtns {
+    @include mediaTB{
+      display: flex;
+    }
+    li{
+      width: 18px;
+      margin: 0 20px 0 0;
+      @include mediaSP{
+        margin:20px 0 0 0;
+      }
+      a{
+        background-size: contain;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-position-y: center;
+        display: block;
+        @include trans;
+      }
+      &.btn_fb{
+        a{
+          background-image: url(../images/common/icon_fb_on.png);
+          width: 18px;
+          height: 18px;
+          @include mediaTB{
+            &:hover{
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+      &.btn_tw{
+        a{
+          background-image: url(../images/common/icon_tw_on.png);
+          width: 20px;
+          height: 18px;
+          @include mediaTB{
+            &:hover{
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+      &.btn_ig{
+        a{
+          background-image: url(../images/common/icon_ig_on.png);
+          width: 17px;
+          height: 18px;
+          @include mediaTB{
+            &:hover{
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /*==================================
   下層
@@ -5446,11 +5537,9 @@ body.artworks {
     }
   }
 
-
-
-
   //フォトブック
   #photobook {
+    background-color: #fff;
     @include mediaSP {
       .cols {
         .image {
@@ -5618,6 +5707,17 @@ body.artworks#pagePhotograph {
   //撮影事例
   #works {
     position: relative;
+    &::before {
+      content:"";
+      display: block;
+      position: absolute;
+      background: #fff;
+      width: 66%;
+      height: calc(150px + 29.6vw);
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
     .rel {
       z-index: 5;
     }
@@ -6067,8 +6167,6 @@ body.artworks#pagePhotograph {
       }
     }
   }
-
-
 
 
   //サムネイル

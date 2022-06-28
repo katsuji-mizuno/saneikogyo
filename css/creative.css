@@ -1855,6 +1855,68 @@ body.scroll.artworks #header {
   font-size: 10px;
   color: #A7A7A7;
 }
+#menu .g_sns_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#menu .g_sns_menu li {
+  width: 18px;
+  margin: 0 20px 0 0;
+}
+#menu .g_sns_menu li a {
+  background-size: contain;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#menu .g_sns_menu li.btn_fb a {
+  background-image: url(../images/common/icon_fb.png);
+  width: 18px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #menu .g_sns_menu li.btn_fb a:hover {
+    background-image: url(../images/common/icon_fb_on.png);
+  }
+}
+@media all and (max-width: 750px) {
+  #menu .g_sns_menu li.btn_fb a {
+    background-image: url(../images/common/icon_fb_on.png);
+  }
+}
+#menu .g_sns_menu li.btn_tw a {
+  background-image: url(../images/common/icon_tw.png);
+  width: 20px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #menu .g_sns_menu li.btn_tw a:hover {
+    background-image: url(../images/common/icon_tw_on.png);
+  }
+}
+@media all and (max-width: 750px) {
+  #menu .g_sns_menu li.btn_tw a {
+    background-image: url(../images/common/icon_tw_on.png);
+  }
+}
+#menu .g_sns_menu li.btn_ig a {
+  background-image: url(../images/common/icon_ig.png);
+  width: 17px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #menu .g_sns_menu li.btn_ig a:hover {
+    background-image: url(../images/common/icon_ig_on.png);
+  }
+}
+@media all and (max-width: 750px) {
+  #menu .g_sns_menu li.btn_ig a {
+    background-image: url(../images/common/icon_ig_on.png);
+  }
+}
 @media screen and (max-width: 374px) {
   #menu {
     padding-left: 70px;
@@ -2158,21 +2220,21 @@ body.menu_dark:not(.open) #btnMenu span {
 ヘッダー(Artworks用)
 ----------------------------*/
 body.artworks #nav_cover {
-  background-color: #212A36;
+  background-color: #000;
 }
 body.artworks #header .logo_h {
   width: 160px;
 }
 @media all and (min-width: 751px) {
   body.artworks #header .logo_h {
-    width: 200px;
+    width: 220px;
   }
 }
 body.artworks #btnMenu span {
-  background-color: #212A36;
+  background-color: #000;
 }
 body.artworks #menu {
-  background-color: #212A36;
+  background-color: #000;
   background-image: none;
 }
 body.artworks #menu li.lv1 a .eng {
@@ -2721,7 +2783,7 @@ body.artworks .btn_read_more.white .link_text {
 .link_icon svg:nth-child(1) {
   z-index: 1;
 }
-.link_icon .over {
+.link_icon svg.over {
   opacity: 0;
 }
 .link_icon svg.over .svg-elem-1 {
@@ -3134,12 +3196,17 @@ body.pg_dark .top_pagination a.active {
   color: #002664;
   z-index: 23;
 }
-
 @media all and (max-width: 1024px) {
-  .panel_ani {
+  #top_about .panel_ani,
+#top_service .panel_ani,
+#top_recruit .panel_ani,
+#top_contact .panel_ani {
     position: relative;
   }
-  .panel_ani::after {
+  #top_about .panel_ani::after,
+#top_service .panel_ani::after,
+#top_recruit .panel_ani::after,
+#top_contact .panel_ani::after {
     content: "";
     width: 100%;
     height: calc(var(--vh, 1vh) * 100);
@@ -3150,6 +3217,7 @@ body.pg_dark .top_pagination a.active {
     z-index: 21;
   }
 }
+
 @media all and (min-width: 751px) {
   #top_about .panel_inner,
 #top_service .panel_inner,
@@ -3455,58 +3523,6 @@ TOP feature　ページャー
   right: 30px;
   bottom: 50px;
   z-index: 35;
-  /*
-  .prev,
-  .next {
-    display: inline-block;
-    position: relative;
-    height: 47px;
-    width: 30px;
-    opacity: 1;
-    @include trans;
-    &.disabled {
-      opacity: 0.4;
-    }
-    &::before,
-    &::after {
-      content:"";
-      display: block;
-      position: absolute;
-      @include trans;
-    }
-    &::before {
-      width: 10px;
-      height: 1px;
-      background-color: #fff;
-      top: 50%;
-    }
-    &::after {
-      width: 7px;
-      height: 7px;
-      top:calc(50% - 3px);
-    }
-  }
-  .next {
-    &::before,&::after {
-      right: 0;
-    }
-    &::after {
-      transform:rotate(45deg);
-      border-top: 1px solid #fff;
-      border-right: 1px solid #fff;
-    }
-  }
-  .prev {
-    &::before,&::after {
-      left: 0;
-    }
-    &::after {
-      transform:rotate(-45deg);
-      border-top: 1px solid #fff;
-      border-left: 1px solid #fff;
-    }
-  }
-  */
 }
 .feature_pagenation .f_page {
   width: 50px;
@@ -3935,9 +3951,15 @@ TOP feature　ページャー
 =================*/
 #mvSubMenu {
   position: absolute;
-  right: 20px;
-  bottom: 35px;
+  right: 40px;
+  bottom: 40px;
   z-index: 19;
+}
+@media all and (max-width: 750px) {
+  #mvSubMenu {
+    right: 20px;
+    bottom: 20px;
+  }
 }
 #mvSubMenu .subMenus a {
   position: relative;
@@ -3961,6 +3983,89 @@ TOP feature　ページャー
 }
 #mvSubMenu .subMenus li + li {
   margin-top: 20px;
+}
+
+/*=================
+  TOP SNSボタン
+=================*/
+#mvSnsBtn {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 19;
+}
+@media all and (max-width: 750px) {
+  #mvSnsBtn {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+#mvSnsBtn p {
+  color: #fff;
+  letter-spacing: 0.4em;
+  font-weight: normal;
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+@media all and (max-width: 750px) {
+  #mvSnsBtn p {
+    display: none;
+  }
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+#mvSnsBtn .SnsBtns li {
+  width: 18px;
+  margin: 0 20px 0 0;
+}
+@media all and (max-width: 750px) {
+  #mvSnsBtn .SnsBtns li {
+    margin: 20px 0 0 0;
+  }
+}
+#mvSnsBtn .SnsBtns li a {
+  background-size: contain;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#mvSnsBtn .SnsBtns li.btn_fb a {
+  background-image: url(../images/common/icon_fb_on.png);
+  width: 18px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns li.btn_fb a:hover {
+    opacity: 0.8;
+  }
+}
+#mvSnsBtn .SnsBtns li.btn_tw a {
+  background-image: url(../images/common/icon_tw_on.png);
+  width: 20px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns li.btn_tw a:hover {
+    opacity: 0.8;
+  }
+}
+#mvSnsBtn .SnsBtns li.btn_ig a {
+  background-image: url(../images/common/icon_ig_on.png);
+  width: 17px;
+  height: 18px;
+}
+@media all and (min-width: 751px) {
+  #mvSnsBtn .SnsBtns li.btn_ig a:hover {
+    opacity: 0.8;
+  }
 }
 
 /*==================================
@@ -6167,6 +6272,9 @@ body.artworks .subTitle {
     padding: 40px 25px;
   }
 }
+#pagePhotograph #photobook {
+  background-color: #fff;
+}
 @media all and (max-width: 750px) {
   #pagePhotograph #photobook .cols .image {
     margin-top: 30px;
@@ -6338,6 +6446,18 @@ body.artworks .subTitle {
 #pagePhotograph #works,
 #pageDorone #works {
   position: relative;
+}
+#pagePhotograph #works::before,
+#pageDorone #works::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #fff;
+  width: 66%;
+  height: calc(150px + 29.6vw);
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 #pagePhotograph #works .rel,
 #pageDorone #works .rel {
@@ -7992,6 +8112,11 @@ body.artworks.white_head:not(.open) #btnMenu span {
   }
 }
 
+#pagePhotograph #works::before,
+#pageDorone #works::before {
+  content: none;
+}
+
 /*=================
   撮影事例
 =================*/
@@ -9205,19 +9330,38 @@ a:hover .meta2::after {
 .beforeafter {
   position: relative;
 }
-.beforeafter:hover::after {
-  content: "";
+.beforeafter .ba_expl {
+  opacity: 1;
   position: absolute;
-  background-image: url(../images/retouch/message.png);
-  width: 240px;
-  height: 62px;
+  background-image: url(../images/retouch/message_sp.png);
+  pointer-events: none;
+  width: 174px;
+  height: 38px;
   background-size: cover;
   z-index: 500;
   left: 50%;
-  top: 40%;
-  margin-left: -120px;
-  margin-top: -31px;
-  pointer-events: none;
+  top: 30%;
+  margin-left: -87px;
+  margin-top: -19px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media all and (min-width: 751px) {
+  .beforeafter .ba_expl {
+    opacity: 0;
+    background-image: url(../images/retouch/message.png);
+    width: 240px;
+    height: 62px;
+    background-size: cover;
+    top: 40%;
+    margin-left: -120px;
+    margin-top: -31px;
+  }
+}
+@media all and (min-width: 751px) {
+  .beforeafter:hover .ba_expl {
+    opacity: 1;
+  }
 }
 
 /*==================================
@@ -9344,6 +9488,169 @@ a:hover .meta2::after {
 @media all and (min-width: 751px) {
   .sp_view {
     display: none;
+  }
+}
+
+/*=================
+  ホバー時にくるっと弧を描くボタン
+=================*/
+.cp_arrows {
+  text-align: right;
+}
+
+@media all and (min-width: 1025px) {
+  .cp_arrows *, .cp_arrows *:before, .cp_arrows *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .cp_arrows .link {
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .cp_arrows .cp_arrow .arrow_icon {
+    position: relative;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    vertical-align: middle;
+  }
+
+  .cp_arrows .cp_arrow .arrow_icon_circle {
+    -webkit-transition: stroke-dashoffset 0.3s ease;
+    transition: stroke-dashoffset 0.3s ease;
+    stroke-dasharray: 95;
+    stroke-dashoffset: 95;
+  }
+
+  .cp_arrows .cp_arrow:hover .arrow_icon_circle {
+    stroke-dashoffset: 0;
+  }
+}
+@media all and (max-width: 750px) {
+  .cp_arrows {
+    height: 120px;
+  }
+
+  .arrow_icon, .arrow_icon_circle {
+    display: none;
+  }
+}
+/*=================
+  modal
+=================*/
+#archiveWorks #modal_slider .prev_icon,
+#taxoWorks #modal_slider .prev_icon,
+#pagePhotograph #modal_slider .prev_icon,
+#pageDorone #modal_slider .prev_icon {
+  cursor: pointer;
+}
+#archiveWorks #modal_slider .next_icon,
+#taxoWorks #modal_slider .next_icon,
+#pagePhotograph #modal_slider .next_icon,
+#pageDorone #modal_slider .next_icon {
+  cursor: pointer;
+}
+#archiveWorks .remodal-close,
+#taxoWorks .remodal-close,
+#pagePhotograph .remodal-close,
+#pageDorone .remodal-close {
+  left: auto;
+  right: 12px;
+  top: -48px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  z-index: 0;
+}
+#archiveWorks .remodal-close::before,
+#taxoWorks .remodal-close::before,
+#pagePhotograph .remodal-close::before,
+#pageDorone .remodal-close::before {
+  content: none;
+}
+#archiveWorks .remodal-close span,
+#taxoWorks .remodal-close span,
+#pagePhotograph .remodal-close span,
+#pageDorone .remodal-close span {
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 16px;
+  left: 11px;
+  background: #fff;
+  opacity: 1;
+  top: 18px;
+}
+#archiveWorks .remodal-close span.x_1,
+#taxoWorks .remodal-close span.x_1,
+#pagePhotograph .remodal-close span.x_1,
+#pageDorone .remodal-close span.x_1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+#archiveWorks .remodal-close span.x_2,
+#taxoWorks .remodal-close span.x_2,
+#pagePhotograph .remodal-close span.x_2,
+#pageDorone .remodal-close span.x_2 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+#archiveWorks .remodal-close:hover,
+#taxoWorks .remodal-close:hover,
+#pagePhotograph .remodal-close:hover,
+#pageDorone .remodal-close:hover {
+  border: none;
+}
+#archiveWorks .svg_close,
+#taxoWorks .svg_close,
+#pagePhotograph .svg_close,
+#pageDorone .svg_close {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  position: absolute;
+  right: -1px;
+  top: -3px;
+  fill: none;
+  cursor: pointer;
+  z-index: 0;
+}
+#archiveWorks .svg_close:active,
+#taxoWorks .svg_close:active,
+#pagePhotograph .svg_close:active,
+#pageDorone .svg_close:active {
+  pointer-events: none;
+}
+#archiveWorks .svg_close .circle_close,
+#taxoWorks .svg_close .circle_close,
+#pagePhotograph .svg_close .circle_close,
+#pageDorone .svg_close .circle_close {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+#archiveWorks .svg_close:hover .circle_close,
+#taxoWorks .svg_close:hover .circle_close,
+#pagePhotograph .svg_close:hover .circle_close,
+#pageDorone .svg_close:hover .circle_close {
+  -webkit-animation: circleAnim 1s forwards;
+          animation: circleAnim 1s forwards;
+  fill: transparent;
+  stroke-dasharray: 138px;
+  stroke-dashoffset: 138px;
+}
+@-webkit-keyframes circleAnim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes circleAnim {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 /*# sourceMappingURL=creative.css.map */
