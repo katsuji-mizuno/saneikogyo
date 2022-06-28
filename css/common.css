@@ -2692,7 +2692,7 @@ body.pg_dark .top_pagination a.active {
     left: 0;
     top: 0;
     background: rgba(255, 255, 255, 0.85);
-    z-index: 21;
+    z-index: -1;
   }
 }
 
