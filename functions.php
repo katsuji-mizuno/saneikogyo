@@ -127,7 +127,7 @@ endif;
 //  抜粋の文字数変更
 ////////////////////////////////////
 function twpp_change_excerpt_length( $length ) {
-  return 40; 
+  return 40;
 }
 add_filter( 'excerpt_length', 'twpp_change_excerpt_length', 999 );
 
@@ -144,11 +144,11 @@ add_filter('posts_search','custom_search', 10, 2);
 
 
 function change_document_title_parts( $title_parts ){
- 
+
     //デフォルトとしてタグラインとサイト名は表示しないようにセット
     //$title_parts['tagline'] = '';
     //$title_parts['site'] = '';
- 
+
   $site_name = trim( get_bloginfo('name') );
   $title_parts['tagline'] = '';
   if(is_search()): //検索結果ページの場合
@@ -156,7 +156,7 @@ function change_document_title_parts( $title_parts ){
   elseif(is_404()): //404ページの場合
     $title_parts['title'] = 'お探しのページは見つかりませんでした';
   endif;
- 
+
   return $title_parts;
 }
 add_filter( 'document_title_parts', 'change_document_title_parts' );
@@ -205,7 +205,7 @@ function my_required_phone( $validation, $data ) {
   }
   return $Validation;
 }
- 
+
 add_filter( 'mwform_validation_mw-wp-form-57', 'my_required_phone', 10, 2 );
 
 //////////////////////////////////////////////////////////////////////
@@ -240,7 +240,7 @@ function CustomPostStyle($hook_suffix) {
    global $post;
    $my_post_type = "dctsche"; // カスタムタイプ名
    // 新規投稿 (initフック).
-   if ( ( 'post-new.php' === $hook_suffix  && ( isset( $_GET['post_type'] ) === true && $my_post_type == $_GET['post_type']         ) ) || 
+   if ( ( 'post-new.php' === $hook_suffix  && ( isset( $_GET['post_type'] ) === true && $my_post_type == $_GET['post_type']         ) ) ||
         ( 'post.php'     === $hook_suffix  && ( is_object( $post )                   && $my_post_type == get_post_type( $post->ID ) ) )   ) {
       echo '<style>#poststuff table td,#poststuff table th {padding:0} </style>';
    }

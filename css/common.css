@@ -1,4 +1,12 @@
 @charset "UTF-8";
+html {
+  visibility: hidden;
+}
+
+html.wf-active {
+  visibility: visible;
+}
+
 /*-------------------------------------------*/
 /* COMMON(サイト基本設定)                      */
 /*-------------------------------------------*/

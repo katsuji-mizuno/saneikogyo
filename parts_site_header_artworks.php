@@ -40,13 +40,13 @@
               <ul class="g_top_menu">
 
                 <li class="lv1 bound">
-                  <a href="<?php echo home_url() ?>/creative/photograph/" ><span class="eng futura" data-text="Photograph">Photograph</span><span class="ja" data-text="建築・竣工写真">建築・竣工写真</span></a>
+                  <a href="<?php echo home_url() ?>/creative/photograph/"><span class="eng futura" data-text="Photograph">Photograph</span><span class="ja" data-text="建築・竣工写真">建築・竣工写真</span></a>
                   <ul class="g_sub_menu">
                     <li class="lv2">
-                      <a href="<?php echo home_url() ?>/creative/photograph#features" ><span class="eng futura" data-text="Features">Features</span><span class="ja" data-text="4つの特長">4つの特長</span></a>
+                      <a href="<?php echo home_url() ?>/creative/photograph?anchor=features"><span class="eng futura" data-text="Features">Features</span><span class="ja" data-text="4つの特長">4つの特長</span></a>
                     </li>
                     <li class="lv2">
-                      <a href="<?php echo home_url() ?>/photo_works/" ><span class="eng futura" data-text="Works">Project</span><span class="ja" data-text="撮影事例">撮影事例</span></a>
+                      <a href="<?php echo home_url() ?>/photo_works/" ><span class="eng futura" data-text="Project">Project</span><span class="ja" data-text="撮影事例">撮影事例</span></a>
                     </li>
                     <li class="lv2">
                       <a href="<?php echo home_url() ?>/creative/photograph/photobook/" ><span class="eng futura" data-text="Photo Book">Photo Book</span><span class="ja" data-text="フォトブック">フォトブック</span></a>
@@ -64,20 +64,20 @@
                 </li>
 
                 <li class="lv1 bound">
-                  <a href="<?php echo home_url() ?>/creative/dorone/" ><span class="eng futura" data-text="Drone aerial photography">Drone aerial photography</span><span class="ja" data-text="ドローン空撮">ドローン空撮</span></a>
+                  <a href="<?php echo home_url() ?>/creative/dorone"><span class="eng futura" data-text="Drone aerial photography">Drone aerial photography</span><span class="ja" data-text="ドローン空撮">ドローン空撮</span></a>
                   <ul class="g_sub_menu">
                     <li class="lv2">
-                      <a href="<?php echo home_url() ?>/creative/dorone#price" ><span class="eng futura" data-text="Price List">Price List</span><span class="ja" data-text="価格">価格</span></a>
+                      <a href="<?php echo home_url() ?>/creative/dorone?anchor=price"><span class="eng futura" data-text="Price List">Price List</span><span class="ja" data-text="価格">価格</span></a>
                     </li>
-                    <li class="lv2">
+                    <!--li class="lv2">
                       <a href="<?php echo home_url() ?>/creative/dorone#cancel" ><span class="eng futura" data-text="CancelPolicy">CancelPolicy</span><span class="ja" data-text="キャンセルポリシー">キャンセルポリシー</span></a>
-                    </li>
+                    </li-->
                     <li class="lv2">
-                      <a href="<?php echo home_url() ?>/creative/dorone#insurance"><span class="eng futura" data-text="Insurance">Insurance</span><span class="ja" data-text="保険のご案内">保険のご案内</span></a>
+                      <a href="<?php echo home_url() ?>/creative/dorone?anchor=insurance"><span class="eng futura" data-text="Insurance">Insurance</span><span class="ja" data-text="保険のご案内">保険のご案内</span></a>
                     </li>
-                    <li class="lv2 long">
+                    <!--li class="lv2 long">
                       <a href="<?php echo home_url() ?>/creative/dorone#permission"><span class="eng futura" data-text="Application For Permission">Application For Permission</span><span class="ja" data-text="許可申請について">許可申請について</span></a>
-                    </li>
+                    </li-->
                   </ul>
                 </li>
 

@@ -152,8 +152,8 @@ jQuery(function($){
   var ofsh = window.pageYOffset ;
 
   //$('#loadingWrap').css('display','none');
-
   $('#loader-bg').css({'display':'block','position':'fixed','top': '0' + 'px'});
+
   $('.loader').css({'visibility':'visible'});
   $('#loadingWrap').css({'visibility':'hidden','opacity':'0'});
 
@@ -576,5 +576,31 @@ jQuery(function($){
       });
     }
   });
+
+});
+
+
+
+
+
+$(window).on('load', function(){
+	// パラメーターの取得
+	var param = location.search
+
+	if (param == "?anchor=features"){
+	// パラメーターの値が 123 の場合に実行する内容
+    $(window).scrollTop($('#features').position().top);
+	}
+
+	if (param == "?anchor=price"){
+    // パラメーターの値が 123 の場合に実行する内容
+      $(window).scrollTop($('#price').position().top);
+  }
+
+  if (param == "?anchor=insurance"){
+    // パラメーターの値が 123 の場合に実行する内容
+      $(window).scrollTop($('#insurance').position().top);
+  }
+
 
 });
