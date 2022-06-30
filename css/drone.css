@@ -8032,4 +8032,167 @@ body.artworks .subTitle {
 .f_logo_sanei {
   display: none;
 }
+
+/*=================
+  ホバー時にくるっと弧を描くボタン
+=================*/
+.cp_arrows {
+  text-align: right;
+}
+
+@media all and (min-width: 1025px) {
+  .cp_arrows *, .cp_arrows *:before, .cp_arrows *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .cp_arrows .link {
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .cp_arrows .cp_arrow .arrow_icon {
+    position: relative;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    vertical-align: middle;
+  }
+
+  .cp_arrows .cp_arrow .arrow_icon_circle {
+    -webkit-transition: stroke-dashoffset 0.3s ease;
+    transition: stroke-dashoffset 0.3s ease;
+    stroke-dasharray: 95;
+    stroke-dashoffset: 95;
+  }
+
+  .cp_arrows .cp_arrow:hover .arrow_icon_circle {
+    stroke-dashoffset: 0;
+  }
+}
+@media all and (max-width: 750px) {
+  .cp_arrows {
+    height: 120px;
+  }
+
+  .arrow_icon, .arrow_icon_circle {
+    display: none;
+  }
+}
+/*=================
+  modal
+=================*/
+#archiveWorks #modal_slider .prev_icon,
+#taxoWorks #modal_slider .prev_icon,
+#pagePhotograph #modal_slider .prev_icon,
+#pageDorone #modal_slider .prev_icon {
+  cursor: pointer;
+}
+#archiveWorks #modal_slider .next_icon,
+#taxoWorks #modal_slider .next_icon,
+#pagePhotograph #modal_slider .next_icon,
+#pageDorone #modal_slider .next_icon {
+  cursor: pointer;
+}
+#archiveWorks .remodal-close,
+#taxoWorks .remodal-close,
+#pagePhotograph .remodal-close,
+#pageDorone .remodal-close {
+  left: auto;
+  right: 12px;
+  top: -48px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  z-index: 0;
+}
+#archiveWorks .remodal-close::before,
+#taxoWorks .remodal-close::before,
+#pagePhotograph .remodal-close::before,
+#pageDorone .remodal-close::before {
+  content: none;
+}
+#archiveWorks .remodal-close span,
+#taxoWorks .remodal-close span,
+#pagePhotograph .remodal-close span,
+#pageDorone .remodal-close span {
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 16px;
+  left: 11px;
+  background: #fff;
+  opacity: 1;
+  top: 18px;
+}
+#archiveWorks .remodal-close span.x_1,
+#taxoWorks .remodal-close span.x_1,
+#pagePhotograph .remodal-close span.x_1,
+#pageDorone .remodal-close span.x_1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+#archiveWorks .remodal-close span.x_2,
+#taxoWorks .remodal-close span.x_2,
+#pagePhotograph .remodal-close span.x_2,
+#pageDorone .remodal-close span.x_2 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+#archiveWorks .remodal-close:hover,
+#taxoWorks .remodal-close:hover,
+#pagePhotograph .remodal-close:hover,
+#pageDorone .remodal-close:hover {
+  border: none;
+}
+#archiveWorks .svg_close,
+#taxoWorks .svg_close,
+#pagePhotograph .svg_close,
+#pageDorone .svg_close {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  position: absolute;
+  right: -1px;
+  top: -3px;
+  fill: none;
+  cursor: pointer;
+  z-index: 0;
+}
+#archiveWorks .svg_close:active,
+#taxoWorks .svg_close:active,
+#pagePhotograph .svg_close:active,
+#pageDorone .svg_close:active {
+  pointer-events: none;
+}
+#archiveWorks .svg_close .circle_close,
+#taxoWorks .svg_close .circle_close,
+#pagePhotograph .svg_close .circle_close,
+#pageDorone .svg_close .circle_close {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+#archiveWorks .svg_close:hover .circle_close,
+#taxoWorks .svg_close:hover .circle_close,
+#pagePhotograph .svg_close:hover .circle_close,
+#pageDorone .svg_close:hover .circle_close {
+  -webkit-animation: circleAnim 1s forwards;
+          animation: circleAnim 1s forwards;
+  fill: transparent;
+  stroke-dasharray: 138px;
+  stroke-dashoffset: 138px;
+}
+@-webkit-keyframes circleAnim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes circleAnim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 /*# sourceMappingURL=drone.css.map */
