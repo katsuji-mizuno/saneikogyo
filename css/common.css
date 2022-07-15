@@ -954,10 +954,12 @@ body.artworks .contents.addPdgB {
           transform: translate(0%, 0%) scale(1);
 }
 
-.panel_ani.animate.view {
-  -webkit-animation: panel-anim2 1s;
-          animation: panel-anim2 1s;
-  opacity: 1;
+@media all and (min-width: 751px) {
+  .panel_ani.animate.view {
+    -webkit-animation: panel-anim2 1s;
+            animation: panel-anim2 1s;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes panel-anim2 {

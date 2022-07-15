@@ -432,8 +432,10 @@ body.artworks {
   transform: translate(0%, 0%) scale(1);
 }
 .panel_ani.animate.view {
-  animation: panel-anim2 1s;
-  opacity: 1;
+  @include mediaTB(){
+    animation: panel-anim2 1s;
+    opacity: 1;
+  }
 }
 @keyframes panel-anim2 {
   0% {
